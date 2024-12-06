@@ -11,14 +11,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Playfair', 'serif'],
-        sans: ['Barlow', 'sans-serif'],
+        display: ["Playfair", "serif"],
+        sans: ["Barlow", "sans-serif"],
       },
 
       colors: {
         green: {
           400: "#004228",
-          400: "#02B140",
+          300: "#02B140",
           200: "#C8E3D0",
           100: "#DAE6B6",
         },

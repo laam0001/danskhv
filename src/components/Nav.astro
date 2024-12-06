@@ -1,0 +1,84 @@
+<div
+  x-data="{ showmenu: false }"
+  class="bg-[#012F4A] p-4 fixed w-full"
+  style="z-index: 3;"
+>
+  <div id="navbar" class="flex lg:text-2xl flex-row justify-between">
+        <a href="/">
+            <div
+            id="logo"
+            class="h-[48px] w-[190px] bg-[url('/logo.svg')] hover:bg-[url('/logo_hover.svg')] bg-cover transition duration-400 ease-in-out m-6">
+        </div>
+        </a>
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-8 mt-1">
+        <li class="lg:text-xl uppercase text-[white]">
+          <a href="#heading">Ungdom</a>
+        </li>
+        <li class="lg:text-xl uppercase text-[white]">
+          <a href="#why">Sikkerhed</a>
+        </li>
+        <li class="lg:text-xl uppercase text-[white]">
+          <a href="#aboutme">Hestevelfærd</a>
+        </li>
+        <li class="lg:text-xl uppercase text-[white]">
+          <a href="#skills">Hestejere</a>
+        </li>
+        <li class="lg:text-xl uppercase text-[white]">
+          <a href="#projects">Om sporten</a>
+        </li>
+      </ul>
+    </nav>
+    <button
+      id="burgermenu"
+      class="lg:hidden text-xl p-6 text-[white]"
+      x-on:click="showmenu = !showmenu">Menu</button
+    >
+  </div>
+  <nav
+    id="mobilmenu"
+    class="flex flex-col content-center pt-4"
+    x-show="showmenu"
+    x-transition:enter="transition-opacity ease-in-out duration-500"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition-opacity ease-in-out duration-500"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    x-on:click="showmenu = false"
+    x-on:click.outside="showmenu = false"
+  >
+    <ul>
+      <li
+        class="text-center text-xl py-2 pt-1 text-[white]"
+        x-transition:enter-delay="200"
+      >
+        <a href="#heading">Ungdom</a>
+      </li>
+      <li
+        class="text-center text-xl py-2 pt-1 text-[white]"
+        x-transition:enter-delay="300"
+      >
+        <a href="#why">Sikkerhed</a>
+      </li>
+      <li
+        class="text-center text-xl py-2 pt-1 text-[white]"
+        x-transition:enter-delay="400"
+      >
+        <a href="#aboutme">Hestevelfærd</a>
+      </li>
+      <li
+        class="text-center text-xl py-2 pt-1 text-[white]"
+        x-transition:enter-delay="400"
+      >
+        <a href="#skills">Hesteejere</a>
+      </li>
+      <li
+        class="text-center text-xl py-2 pt-1 text-[white]"
+        x-transition:enter-delay="200"
+      >
+        <a href="#projects">Om sporten</a>
+      </li>
+    </ul>
+  </nav>
+</div>

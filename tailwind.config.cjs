@@ -59,6 +59,17 @@ module.exports = {
           secondary: "#E0EFFA",
         },
       },
+
+      keyframes: {
+        walking: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(40px)" },
+        },
+      },
+
+      animation: {
+        walking: "walking 5s ease-in-out infinite",
+      },
     },
   },
 };

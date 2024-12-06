@@ -10,6 +10,11 @@ module.exports = {
 
   theme: {
     extend: {
+      fontFamily: {
+        display: ['Playfair', 'serif'],
+        sans: ['Barlow', 'sans-serif'],
+      },
+
       colors: {
         green: {
           400: "#004228",
@@ -47,6 +52,10 @@ module.exports = {
 
         black: {
           100: "#1A1919",
+        },
+
+        text: {
+          primary: "#FFFFFF",
         },
       },
     },

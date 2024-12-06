@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Playfair', 'serif'],
+        display: ['Playfair Display', 'serif'],
         sans: ['Barlow', 'sans-serif'],
       },
 
@@ -57,6 +57,7 @@ module.exports = {
         text: {
           primary: "#FFFFFF",
           secondary: "#E0EFFA",
+          tertiary: "#000000",
         },
       },
     },

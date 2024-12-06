@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import nyhed1 from "../assets/images/forside-billeder/nyhed1.webp";
+---
+
+<div class="p-10 mt-5 lg:mt-10">
+    <h1 class="text-tertiary font-display font-bold text-5xl lg:text-6xl pb-8 ">Nyheder</h1>
+    <section>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-20">
+        <div class="col-span-1 zoom">
+          <div class="overflow-hidden">
+            <a href="https://nicolailorenzen.netlify.app/" target="_blank">
+                <Image src={nyhed1} alt="50-års jubilæum som travtræner" />
+            </a>
+          </div>
+          <a href="https://nicolailorenzen.netlify.app/" target="_blank">
+            <h2 class="text-2xl mt-2 py-3 font-display font-bold">50-års jubilæum som travtræner</h2>
+          </a>
+          <figcaption class="prose text-lg text-[#501e1f]">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus culpa iste voluptatem unde fuga laudantium blanditiis molestias, sapiente nemo non alias ducimus qui, aperiam deleniti deserunt doloribus dolorem, nihil aliquam distinctio eligendi ut consequatur molestiae excepturi nesciunt. Eum, rerum quidem repudiandae inventore quia fuga aut temporibus eligendi, eos corporis veniam!
+          </figcaption>
+        </div>

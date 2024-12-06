@@ -30,10 +30,10 @@
     font-variation-settings: "wdth" 100;
   }
 
-  .playfair-bold {
+  .playfair-display {
     font-family: "Playfair", serif;
     font-optical-sizing: auto;
-    font-weight: 700;
+    font-weight: 300;
     font-style: italic;
     font-variation-settings: "wdth" 100;
   }

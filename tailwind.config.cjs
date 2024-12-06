@@ -56,6 +56,7 @@ module.exports = {
 
         text: {
           primary: "#FFFFFF",
+          secondary: "#E0EFFA",
         },
       },
     },

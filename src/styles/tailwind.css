@@ -3,15 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  
   .barlow-condensed-regular {
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 400;
     font-style: normal;
   }
+  
   .barlow-condensed-bold {
     font-family: "Barlow Condensed", sans-serif;
     font-weight: 700;
-    font-style: normal;
+    font-style: no
+    rmal;
   }
   .playfair-regular {
     font-family: "Playfair", serif;

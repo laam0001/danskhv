@@ -11,14 +11,19 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+<<<<<<< HEAD
         display: ['Playfair Display', 'serif'],
         sans: ['Barlow', 'sans-serif'],
+=======
+        display: ["Playfair", "serif"],
+        sans: ["Barlow", "sans-serif"],
+>>>>>>> sektion01
       },
 
       colors: {
         green: {
           400: "#004228",
-          400: "#02B140",
+          300: "#02B140",
           200: "#C8E3D0",
           100: "#DAE6B6",
         },
@@ -59,6 +64,17 @@ module.exports = {
           secondary: "#E0EFFA",
           tertiary: "#000000",
         },
+      },
+
+      keyframes: {
+        walking: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(40px)" },
+        },
+      },
+
+      animation: {
+        walking: "walking 5s ease-in-out infinite",
       },
     },
   },

@@ -2,21 +2,38 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import { Image } from "astro:assets";
-import heroImg from "../assets/images/publikum-sektion1.webp";
+import heroImg from "../assets/images/bg-hero.webp";
+import dronningBG from "../assets/images/baggrund-dronning.webp";
 ---
 
 
 <MainLayout title="Forside | Dansk Hestevæddeløb">
-    <section class="bg-green-100 py-40">
-        <h1 class="px-10 text-7xl mt-20 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
-        <Image src={heroImg} alt="publikum med hatte på"></Image>
-
-        <div>
-            
-        </div>
-
-
-
-        <h1></h1>
+    <section class="bg-green-100 py-24">
+        <h1 class="px-4 text-4xl mt-20 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
+        <Image class="" src={heroImg} alt="publikum med hatte på"></Image>
     </section>
+
+        <div class="h-64 bg-gradient-to-b from-green-100 to-red-100"></div>
+
+    <section class="bg-red-100">
+        <!-- <div class= "lg:hidden flex items-center h-screen w-100 bg-cover bg-center sticky top-0" style="background-image: url('/bg-dronning-mobile.webp')"> -->
+         <div class= "sticky top-0 left-0 right-0 bottom-0 h-screen w-100 bg-cover bg-center walkinview" style="background-image: url('/baggrund-dronning.webp')">
+            <img class="flex flex-col w-96 md:w-1/2 h-full justify-center p-4 walk1 pt-48 animate-[walking_5s_ease-in-out_infinite]" src="/src/assets/images/dronning.svg" alt="Dronning Caroline Mathilde"/>
+         </div>
+         <div class="h-[100vh]"></div>
+     </section>
 </MainLayout>
+
+
+<script>
+    import { animate, inView, scroll } from "motion";
+
+    inView( ".walkinview", () =>{
+	animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 }) 
+    
+
+    return () => {
+		animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 })
+    }
+    })
+</script>

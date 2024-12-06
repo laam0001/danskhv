@@ -11,13 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-<<<<<<< HEAD
-        display: ['Playfair Display', 'serif'],
-        sans: ['Barlow', 'sans-serif'],
-=======
-        display: ["Playfair", "serif"],
+        display: ["Playfair Display", "serif"],
         sans: ["Barlow", "sans-serif"],
->>>>>>> sektion01
       },
 
       colors: {

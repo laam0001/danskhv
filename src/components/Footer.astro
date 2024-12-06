@@ -1,6 +1,167 @@
 ---
+import Button from "../components/Button.astro";
 ---
-<div>
-<p>Footer</p>
-</div>
+
+<div   class="bg-[#012F4A] w-full"
+>
+  <footer
+    class="border-t uppercase border-text-primary max-w-full pt-14 flex md:justify-center playfair-regular"
+  >
+    <div
+      class="w-full max-w-screen-lg grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-26"
+    >
+      <div class="col-span-1 text-center md:text-left order-3 md:order-1">
+        <ul class="text-text-primary md:text-lg text-sm md:leading leading-6">
+          <li
+            class="hover:text-text-tertiary underline transition duration-400 ease-in-out"
+          >
+            <a href="mailto:info@danskhv.dk">info@danskhv.dk</a>
+          </li>
+          <br />
+          <a
+            href="https://www.google.com/maps/place/CPH-LAB/@56.23008,11.5425,7z/data=!3m1!4b1!4m6!3m5!1s0x46525386f9339beb:0xca438c908c55dd78!8m2!3d56.23008!4d11.5425!16s%2Fg%2F11frflk7k_?hl=da&entry=ttu"
+            target="_blank"
+          >
+            <li class="font-bold"><a href="#"></a>Dansk Hestevæddeløb</li>
+            <li><a href="#"></a>Traverbanevej 10 <br /> 2920 Charlottenlund</li>
+          </a>
+        </ul>
+      </div>
+
+      <div class="col-span-1 text-center md:text-center order-1 md:order-2">
+        <ul class="text-text-primary md:text-lg text-sm md:leading leading-6">
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            <a href="/nyheder">Nyheder</a>
+          </li>
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Kontakt os
+          </li>
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Løbskalender
+          </li>
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Travinfo
+          </li>
+          
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Galopinfo
+          </li>
+        </ul>
+      </div>
+
+      <div class="col-span-1 text-center md:text-right order-2 md:order-3">
+        <ul class="text-text-primary md:text-lg text-sm md:leading leading-6 ">
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Om sporten
+          </li>
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Dansk Hestevæddeløb
+          </li>
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Find din lokale bane
+          </li>
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Samarbejdspartnere
+          </li>
+          <li
+            class="hover:text-text-tertiary cursor-pointer transition duration-400 ease-in-out"
+          >
+            Privatlivspolitik
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="flex p-13 pt-20 items-center justify-center">
+    <a href="#">
+        <div
+          id="logo"
+          class="h-[70px] w-[280px] bg-[url('/logo.svg')] bg-cover transition duration-400 ease-in-out mt-10">
+        </div>
+      </a>    
+  </div>
   
+
+  <div class="flex gap-6 md:justify-center justify-center">
+    <div class="flex justify-center items-center my-10">
+        <a href="https://www.facebook.com/danskhestevaeddeloeb" target="_blank">
+          <div
+            id="Facebook-logo"
+            class="w-[50px] h-[50px] bg-[url('icons/facebook.svg')] bg-cover transition duration-400 ease-in-out">
+          </div>
+        </a>
+      </div>
+
+    <div class="flex justify-center items-center my-10">
+        <a href="https://www.youtube.com/channel/UCqVmJbbO2zcibekxjCa3kOA#/" target="_blank">
+          <div
+            id="Youtube-logo"
+            class="w-[50px] h-[50px] bg-[url('icons/youtube.svg')] bg-cover transition duration-400 ease-in-out">
+          </div>
+        </a>
+      </div>
+      
+      <div class="flex justify-center items-center my-10">
+        <a href="https://www.instagram.com/danskhv/" target="_blank">
+          <div
+            id="Instagram-logo"
+            class="w-[50px] h-[50px] bg-[url('icons/instagram.svg')] bg-cover transition duration-400 ease-in-out">
+          </div>
+        </a>
+      </div>
+  </div>
+
+
+  <div class="flex items-center justify-center py-4 ">
+    <h3 class="md:text-xl text-lg font-display font-bold text-text-primary">
+      Tilmeld dig vores nyhedsbrev
+    </h3>
+  </div>
+  
+
+  <div class="w-[380px] mx-auto flex">
+    <label for="email" class="block"></label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      placeholder=""
+      class="bg-transparent border-white-100 focus:border-white-100 barlow-condensed-regular placeholder-white-100 w-full text-md rounded-md focus:ring-0 border-1 focus:outline-none focus:border-2 focus:text-text-primary"
+    />
+
+    <button>
+        <Button variant="primary" size="medium">
+          <div
+            id="arrow-right-logo"
+            class="w-[50px] h-[50px] ml-2 bg-[url('icons/arrow-right.svg')] bg-cover transition duration-400 ease-in-out hover:translate-x-2">
+          </div>
+        </Button>
+      </button>      
+
+  <div
+    class="flex  py-10 text-text-primary"
+    style="justify-content: space-between;"
+  >
+    <div class="text-xs ml-12">CVR: 31 94 33 29</div>
+    <div class="text-xs mr-12">Copyright 2024 © Dansk Hestevæddeløb</div>
+  </div>
+</div>

@@ -5,7 +5,6 @@ import { Image } from "astro:assets";
 import heroImg from "../assets/images/bg-hero.webp";
 import soundOn from "../assets/images/sound-on.webp";
 import krig from "../assets/images/krig.webp";
-import dronningBG from "/public/baggrund-dronning.webp";
 ---
 
 <MainLayout title="Forside | Dansk Hestevæddeløb">
@@ -15,61 +14,82 @@ import dronningBG from "/public/baggrund-dronning.webp";
             <Image src={soundOn} alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.play()"></Image>
         </div>
 
-        <h1 class="px-4 text-6xl mt-20 text-center text-green-400 font-display font-bold">Fællesskabet venter...</h1>
+        <h1 class="px-4 text-5xl mt-32 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
         <Image class="" src={heroImg} alt="publikum med hatte på"></Image>
+
+        <div class="absolute top-72 right-4">
+            <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+            <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 420px; height: 420px" loop autoplay></dotlottie-player>
+        </div>
+
     </section>
 
         <div class="h-64 bg-gradient-to-b from-green-100 to-red-100"></div>
 
 <!--Dronning sektion -->
     <section class="bg-red-100" id="lydeffekter" x-data="">
-        <audio x-ref="trykforatafspillelyd">
-            <source src="/public/sound-dronning.mp3" type="audio/mp3">
+        <audio x-ref="trykforatafspillelyd" loop autoplay class="z-100">
+            <source src="https://lna-mediedesign.dk/sound-dronning.mp3" type="audio/mp3">
         </audio>
 
-        <!-- <div class= "lg:hidden flex items-center h-screen w-100 bg-cover bg-center sticky top-0" style="background-image: url('/bg-dronning-mobile.webp')"> -->
-         <div class= "sticky top-0 left-0 right-0 bottom-0 h-[44rem] w-100 bg-cover bg-center walkinview" style="background-image: url('/baggrund-dronning.webp')">
+        <div class="scrollzoom overflow-clip bg-cover">
+         <div class= "sticky top-48 left-0 right-0 bottom-0 h-cover bg-cover bg-center walkinview scrollzoomimg" style="background-image: url('/baggrund-dronning.webp')">
             <img class="flex flex-col w-96 md:w-1/2 h-full justify-center p-4 walk1 pt-48 animate-[walking_5s_ease-in-out_infinite]" src="/src/assets/images/dronning.svg" alt="Dronning Caroline Mathilde"/>
          </div>
 
+         <div>
          <div class="relative flex justify-end"><!-- relative elementet -->
-			<div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 ">
-				<div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
-					<p class="text-center font-display">Året er 1771... Vi befinder os i Københavns Fælled. For første gang på dansk jord, afholdes Hestevæddeløb.</p>
-				</div>
-				<div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
-					<p class="text-center font-display">Dette er Dronning Caroline Mathilde... </p>
-				</div>
+            <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 ">
+                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
+                    <p class="text-center font-display">Året er 1771... Vi befinder os i Københavns Fælled. For første gang på dansk jord, afholdes Hestevæddeløb.</p>
+                </div>
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
-					<p class="text-center font-display">Hun står der med et smil, og i hendes øjne ser hun et glimt af hendes drøm. Hun har bragt ideen med sig fra England – et land hvor hestevæddeløb ikke bare er en sport, men en livsstil.</p>
-				</div>
-                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mt-40">
-					<p class="text-center font-display">Men hør nu... det bliver ikke nemt.</p>
-				</div>
-			</div>
-		</div>
+                    <p class="text-center font-display">Dette er Dronning Caroline Mathilde... </p>
+                </div>
+                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
+                    <p class="text-center font-display">hun står der med et smil, og i hendes øjne ser hun et glimt af hendes drøm. Hun har bragt ideen med sig fra England – et land hvor hestevæddeløb ikke bare er en sport, men en livsstil.</p>
+                </div>
+                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mt-40 mb-96">
+                    <p class="text-center font-display">Men hør nu... det bliver ikke nemt.</p>
+                </div>
+            </div>
+        </div>
         <div class="h-[80vh]"></div>
+        </div>
+        </div>
      </section>
 
-     <div class="h-80 bg-gradient-to-b from-red-100 to-[#C4818F]"></div>
 
 <!-- Krig og forræderi -->
-     <section class="">
-        <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0" src={krig} alt="Krig og forræderi";></Image>
+    <section class="">
+        <div class="crossfadeimages h-screen lg:w-screen">
+            <div class="h-screen bg-red-400 crossfadetopimg object-cover"></div>
+            <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0 crossfadebottomimg" src={krig} alt="Krig og forræderi"></Image> 
+        </div>
+
+     <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0 crossfadebottomimg" src={krig} alt="Krig og forræderi"></Image>
 
         <div class="relative flex justify-end"><!-- relative elementet -->
             <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 ">
-                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[800px]">
+
+                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[600px]">
                     <p class="text-center font-display">Forræderi og krig truer landet.</p>
                 </div>
+
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[600px]">
                     <p class="text-center font-display">Ingen ved, om denne sport nogensinde vil slå rødder i Danmark..</p>
                 </div>
+
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[800px]">
                     <p class="text-center font-display">Men én ting er sikkert: det første løb er kun begyndelsen..</p>
                 </div>
             </div>
         </div>
+     </section>
+
+<!-- 1954 -->
+     <section>
+
 
      </section>
 </MainLayout>
@@ -79,11 +99,32 @@ import dronningBG from "/public/baggrund-dronning.webp";
     import { animate, inView, scroll } from "motion";
 
     inView( ".walkinview", () =>{
-	animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 }) 
+    animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 }) 
     
 
     return () => {
-		animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 })
+        animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 })
     }
     })
+
+    scroll(
+    animate(".scrollzoomimg", { 
+        scale: [1, 20]    
+    }),
+    { 
+      target: document.querySelector(".scrollzoom"),
+      offset: ["0.90 end", "end end"]
+    }
+    )
+
+    /* Crossfade to billeder */
+    scroll(
+    animate(".crossfadebottomimg", {
+        opacity: [1, 0]
+    }), {
+        target: document.querySelector(".crossfadeimages"),
+        offset: ["25vh", "-2vh"]
+    }
+    );
 </script>
+

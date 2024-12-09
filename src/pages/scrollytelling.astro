@@ -27,7 +27,7 @@ import krig from "../assets/images/krig.webp";
         </audio>
 
         <div class="scrollzoom overflow-clip bg-cover">
-         <div class= "sticky top-0 left-0 right-0 bottom-0 h-[44rem] w-100 bg-cover bg-center walkinview  scrollzoomimg crossfadetopimg" style="background-image: url('/baggrund-dronning.webp')">
+         <div class= "sticky top-48 left-0 right-0 bottom-0 h-cover bg-cover bg-center walkinview scrollzoomimg" style="background-image: url('/baggrund-dronning.webp')">
             <img class="flex flex-col w-96 md:w-1/2 h-full justify-center p-4 walk1 pt-48 animate-[walking_5s_ease-in-out_infinite]" src="/src/assets/images/dronning.svg" alt="Dronning Caroline Mathilde"/>
          </div>
 
@@ -53,20 +53,39 @@ import krig from "../assets/images/krig.webp";
         </div>
      </section>
 
-     <div class="h-80 bg-gradient-to-b from-red-100 to-[#C4818F]"></div>
 
 <!-- Krig og forræderi -->
-     <section class="">
-        <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0" src={krig} alt="Krig og forræderi";></Image>
-
+    <section class="">
+        <div class="crossfadeimages h-screen lg:w-screen">
+            <div class="h-screen bg-red-400 crossfadetopimg object-cover"></div>
+            <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0 crossfadebottomimg" src={krig} alt="Krig og forræderi"></Image> 
+        </div>
+        
         <div class="relative flex justify-end"><!-- relative elementet -->
             <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 ">
+
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[800px]">
                     <p class="text-center font-display">Forræderi og krig truer landet.</p>
                 </div>
+
+            </div>
+        </div>
+
+    </section>
+
+     <!--  <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0 crossfadebottomimg" src={krig} alt="Krig og forræderi"></Image> --> 
+
+        <div class="relative flex justify-end"><!-- relative elementet -->
+            <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 ">
+
+                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[800px]">
+                    <p class="text-center font-display">Forræderi og krig truer landet.</p>
+                </div>
+
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[600px]">
                     <p class="text-center font-display">Ingen ved, om denne sport nogensinde vil slå rødder i Danmark..</p>
                 </div>
+
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-[800px]">
                     <p class="text-center font-display">Men én ting er sikkert: det første løb er kun begyndelsen..</p>
                 </div>
@@ -95,11 +114,11 @@ import krig from "../assets/images/krig.webp";
 
     scroll(
     animate(".scrollzoomimg", { 
-        scale: [1, 9]    
+        scale: [1, 20]    
     }),
     { 
       target: document.querySelector(".scrollzoom"),
-      offset: ["0.9 end", "end end"]
+      offset: ["0.90 end", "end end"]
     }
     )
 
@@ -109,7 +128,7 @@ import krig from "../assets/images/krig.webp";
 		opacity: [1, 0]
 	}), {
 		target: document.querySelector(".crossfadeimages"),
-		offset: ["25vh", "25vh"]
+		offset: ["25vh", "-25vh"]
 	}
 	);
 </script>

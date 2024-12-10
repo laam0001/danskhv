@@ -6,17 +6,20 @@ import heroImg from "../assets/images/bg-hero.webp";
 import soundOn from "../assets/images/sound-on.webp";
 import krig from "../assets/images/krig.webp";
 
-
+function changeImage(){
+  document.getElementById("audio-global-mute").style.visibility = 'hidden';
+  document.getElementById("audio-global").style.visibility = 'visible';
+} 
 
 ---
 
 <MainLayout title="Forside | Dansk Hestevæddeløb">
 <!-- Hero -->
     <section class="bg-green-100 py-0">
-
         <div id="audio-global" class="flex justify-end playing">
-            <img src="/sound-on.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.play()" id="audio-global-mute" onclick="changeImage()"></img>
+            <img src="/sound-on.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4  hidden" @click="$refs.trykforatafspillelyd.play()" id="audio-global" onclick="changeImage()"></img>
 
+            <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.play()" id="audio-global-mute" onclick="changeImage()"></img>
         </div>
 
         <h1 class="px-4 text-5xl mt-14 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>

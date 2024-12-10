@@ -66,10 +66,20 @@ module.exports = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(40px)" },
         },
+
+        looking: {
+          "0%": { transform: "translateX(0px)" },
+          "50%": { transform: "translateY(15px)" },
+          "100%": { transform: "translateX(0px)" },
+        },
       },
 
       animation: {
         walking: "walking 5s ease-in-out infinite",
+      },
+
+      animation: {
+        looking: "looking 5s ease-in-out",
       },
     },
   },

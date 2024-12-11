@@ -6,6 +6,7 @@ import heroImg from "../assets/images/bg-hero.webp";
 import soundOn from "../assets/images/sound-on.webp";
 import krig from "../assets/images/krig.webp";
 import venner from "./public/Baggrund-venner.webp";
+import glas from "../assets/images/glas.webp";
 
 
 function changeImage(){
@@ -57,7 +58,7 @@ function changeImage(){
                     <p class="text-center font-display">Dette er Dronning Caroline Mathilde... </p>
                 </div>
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
-                    <p class="text-center font-display">hun står der med et smil, og i hendes øjne ser hun et glimt af hendes drøm. Hun har bragt ideen med sig fra England – et land hvor hestevæddeløb ikke bare er en sport, men en livsstil.</p>
+                    <p class="text-center font-display">hun står med et smil, og i hendes øjne ser hun et glimt af hendes drøm. Hun har bragt ideen med sig fra England – et land hvor hestevæddeløb ikke bare er en sport, men en livsstil.</p>
                 </div>
                 <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mt-40 mb-96">
                     <p class="text-center font-display">Men hør nu... det bliver ikke nemt.</p>
@@ -116,9 +117,9 @@ function changeImage(){
     </div>
 
 
-    <div class="crossfadeimages h-screen lg:w-screen">
-        <Image class="h-screen crossfadetopimg object-cover" src={venner}  alt="venner holder om hinanden"></Image>
-        <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0 crossfadebottomimg" src={krig} alt="Krig og forræderi"></Image> 
+    <div class="fadeimages h-screen lg:w-screen">
+        <Image class="h-screen fadetopimg object-cover z-10" src={venner}  alt="venner holder om hinanden"></Image>
+        <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0 fadebottomimg" src={glas} alt="Krig og forræderi"></Image> 
     </div>
      </section>
 
@@ -178,6 +179,18 @@ function changeImage(){
         offset: ["25vh", "-2vh"]
     }
     );
+
+     /* Crossfade to billeder */
+     scroll(
+    animate(".fadebottomimg", {
+        opacity: [1, 0]
+    }), {
+        target: document.querySelector(".fadeimages"),
+        offset: ["25vh", "-2vh"]
+    }
+    );
+
+    /* Sticky parallax scrolling */
 
     scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
 		target: document.querySelector(".stickyparallax1"),

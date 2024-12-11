@@ -1,0 +1,22 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../assets/images/bg-hero.webp";
+---
+
+<section class="bg-green-100 py-0">
+    <div id="audio-global" class="flex justify-end playing">
+        <img src="/sound-on.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4  hidden" @click="$refs.trykforatafspillelyd.play()" id="audio-global" onclick="changeImage()"></img>
+
+        <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.play()" id="audio-global-mute" onclick="changeImage()"></img>
+    </div>
+
+    <h1 class="px-4 text-5xl mt-14 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
+    <Image class="" src={heroImg} alt="publikum med hatte på"></Image>
+
+    <div class="absolute top-72 right-4">
+        <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+        <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 420px; height: 420px" loop autoplay></dotlottie-player>
+    </div>
+
+</section>

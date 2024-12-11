@@ -1,7 +1,7 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import heroImg from "../assets/images/bg-hero.webp";
+import heroImgDesktop from "../assets/images/hero-desktop.webp";
 ---
 
 <section class="bg-green-100 py-0">
@@ -11,12 +11,27 @@ import heroImg from "../assets/images/bg-hero.webp";
         <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.play()" id="audio-global-mute" onclick="changeImage()"></img>
     </div>
 
-    <h1 class="px-4 text-5xl mt-14 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
-    <Image class="" src={heroImg} alt="publikum med hatte på"></Image>
+    <h1 class="px-4 text-5xl lg:text-7xl mt-14 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
+    <Image class="lg:hidden lg:w-[1000px] lg:-mt-20" src={heroImg} alt="publikum med hatte på"></Image>
+    <Image class="invisible lg:visible h-screen" src={heroImgDesktop} alt="publikum med hatte på"></Image>
 
-    <div class="absolute top-72 right-4">
+    <div class="lg:hidden absolute top-72 right-4">
         <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-        <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 420px; height: 420px" loop autoplay></dotlottie-player>
+        <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 420px; height: 420px;" id="hest" loop autoplay></dotlottie-player>
+    </div>
+
+    <div class="invisible lg:visible absolute top-64 ml-48">
+        <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+        <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 820px; height: 820px;" id="hest" loop autoplay></dotlottie-player>
     </div>
 
 </section>
+
+<style>
+   @media (min-width: 1024px) {
+    #hest {
+            width: 1200px;
+            height: 1200px;
+        }
+    }
+</style>

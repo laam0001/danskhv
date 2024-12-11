@@ -123,6 +123,15 @@ function changeImage(){
         <Image class="h-screen fadetopimg object-cover z-10" src={venner}  alt="venner holder om hinanden"></Image>
         <Image class="sticky top-0 left-0 right-0 bottom-0 w-100 bg-cover bg-center object-cover h-screen z-0 my-0 fadebottomimg" src={glas} alt="Krig og forræderi"></Image> 
     </div>
+
+
+    <div class="videocontainer sticky top-[20%] w-full h-screen ">
+        <video  muted loop playsinline class="w-full" id="videofil" >
+            <source src="https://lna-mediedesign.dk/glas-video.mp4" type="video/mp4">
+            <source src="https://lna-mediedesign.dk/glas-video.webm" type="video/webm">
+        </video>
+        </div>
+        <div class="h-screen videoscroller"></div>
      </section>
 
 
@@ -198,6 +207,20 @@ function changeImage(){
     scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
 		target: document.querySelector(".stickyparallax1"),
 	});
+
+    /* Scroll scrubber */
+	const scrubbervideo = document.querySelector("#videofil");
+	scrubbervideo.pause();	
+	scroll(
+		({ y }) => {
+		if (!scrubbervideo.readyState) return;
+		scrubbervideo.currentTime = scrubbervideo.duration * y.progress;
+		},
+		{
+		target: document.querySelector(".videoscroller"),
+		offset: ["start end", "end start"]
+		}
+	);
 
 </script>
 

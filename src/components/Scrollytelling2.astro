@@ -1,0 +1,45 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import publikum from "../assets/images/publikum-bagfra.svg";
+
+// Videoer
+---
+
+<div class="h-80 bg-gradient-to-b from-[#975361] to-blue-300"></div>
+
+
+<!--Skåler sektion -->
+<section class="bg-[#B4CEF4]" id="lydeffekter" x-data="">
+    <audio x-ref="trykforatafspillelyd">
+        <source src="" type="audio/mp3">
+    </audio>
+
+    <!-- <div class= "lg:hidden flex items-center h-screen w-100 bg-cover bg-center sticky top-0" style="background-image: url('/publikum.svg')"> -->
+    <div class= "sticky top-0 left-0 right-0 bottom-0 h-[44rem] w-100 bg-cover bg-center walkinview" style="background-image: url('/baggrund-bane.png')">
+     </div>
+
+     <div class="relative flex justify-end">
+        <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 ">
+            <div class="bg-black-100/50 text-white-100 text-[18px] p-10 mb-96">
+                <p class="text-center font-display">Kig omkring dig. <br> Hver en person er her for én ting: at være en del af noget stort, noget magisk.</p>
+            </div>
+            <div class="bg-black-100/50 text-white-100 text-[18px] p-10 mb-96 mt-40">
+                <p class="text-center font-display">Folk er ikke kun her for hestevæddeløb... de er her for fællesskabet!</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-[80vh]"></div>
+ </section>
+
+ <!-- Kammerater skåler sektion-->
+ <div class="h-80 bg-gradient-to-b from-blue-300 to-blue-400"></div>
+ <section class="bg-blue-400 flex items-center justify-center min-h-screen" id="lydeffekter">
+    <div class="absolute bg-black-100/50 text-white-100 text-[18px] p-10 mb-96 mt-40">
+        <p class="text-center font-display">Det er blevet en tradition, det her. <br> <br> Et sted hvor venner mødes, hvor gamle minder opstår, og hvor nye skabes.</p>
+    </div>
+
+    <div class="flex flex-col items-center justify-center ">
+    </div>
+</section>
+

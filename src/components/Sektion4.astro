@@ -30,7 +30,7 @@ import glas from "../assets/images/glas.webp";
 </div>
 
 
-    <div class="lg:invisible videocontainer sticky top-[0%] w-full h-screen">
+    <div class="lg:hidden videocontainer sticky top-[0%] w-full h-screen">
         <video  muted loop playsinline class="w-full" id="videofil" >
             <source src="https://lna-mediedesign.dk/glas-mobile.mp4" type="video/mp4">
             <source src="https://lna-mediedesign.dk/glas-mobile.webm" type="video/webm">
@@ -40,14 +40,31 @@ import glas from "../assets/images/glas.webp";
 
 
 
-<!-- Desktop video
-<div class="hidden lg:visible videocontainer sticky top-[0%] w-full h-[100vh] ">
-    <video  muted loop playsinline class="w-full" id="videofil" >
-        <source src="https://lna-mediedesign.dk/glasvideo.mp4" type="video/mp4">
-        <source src="https://lna-mediedesign.dk/glasvideo.webm" type="video/webm">
-    </video>
-    </div>
+    <!-- Desktop video -->
+    <div class="hidden lg:block videocontainer sticky top-[0%] w-full h-[100vh] ">
+        <video  muted loop playsinline class="w-full" id="videofil" >
+            <source src="https://lna-mediedesign.dk/glasvideo.mp4" type="video/mp4">
+            <source src="https://lna-mediedesign.dk/glasvideo.webm" type="video/webm">
+        </video>
+        </div>
     <div class="h-screen videoscroller"></div>
--->
 
  </section>
+
+ <script>
+    import { animate, inView, scroll } from "motion"; 
+    
+    /* Scroll scrubber */
+	const scrubbervideo = document.querySelector("#videofil");
+	scrubbervideo.pause();	
+	scroll(
+		({ y }) => {
+		if (!scrubbervideo.readyState) return;
+		scrubbervideo.currentTime = scrubbervideo.duration * y.progress;
+		},
+		{
+		target: document.querySelector(".videoscroller"),
+		offset: ["start end", "end end"]
+		}
+	);
+ </script>

@@ -111,19 +111,5 @@ function changeImage(){
 		target: document.querySelector(".stickyparallax1"),
 	});
 
-    /* Scroll scrubber */
-	const scrubbervideo = document.querySelector("#videofil");
-	scrubbervideo.pause();	
-	scroll(
-		({ y }) => {
-		if (!scrubbervideo.readyState) return;
-		scrubbervideo.currentTime = scrubbervideo.duration * y.progress;
-		},
-		{
-		target: document.querySelector(".videoscroller"),
-		offset: ["start end", "end end"]
-		}
-	);
-
 </script>
 

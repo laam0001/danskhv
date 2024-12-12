@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import heroImg from "../assets/images/bg-hero.webp";
 ---
 
+
 <section class="bg-green-100 py-0" id="lydeffekter" x-data>
     <audio x-ref="trykforatafspillelyd" loop autoplay class="z-100">
         <source src="https://lna-mediedesign.dk/sound-dronning.mp3" type="audio/mpeg">
@@ -12,8 +13,10 @@ import heroImg from "../assets/images/bg-hero.webp";
     <div id="audio-global" class="flex justify-end playing">
         <img src="/sound-on.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.play()" id="audio-global"></img>
     </div>
-
-     <!-- <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.play()" id="audio-global-mute" onclick="changeImage()"></img> -->
+    
+ 
+        <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" @click="$refs.trykforatafspillelyd.pause()" id="audio-global-mute"></img>
+        
 
     <h1 class="px-4 text-5xl mt-14 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
     <Image class="" src={heroImg} alt="publikum med hatte på"></Image>

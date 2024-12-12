@@ -1,0 +1,23 @@
+<div class="videocontainer sticky top-[20%] w-full h-full">
+	<video autoplay muted loop playsinline class="w-full" id="videofil">
+		<source src="/video-scrubber.mp4" type="video/mp4">
+		<source src="/video-scrubber.mp4" type="video/webm">
+	</video>
+	</div>
+	<div class="h-screen videoscroller"></div>
+
+    
+<script>
+	const scrubbervideo = document.querySelector("#videofil");
+	scrubbervideo.pause();	
+	scroll(
+		({ y }) => {
+		if (!scrubbervideo.readyState) return;
+		scrubbervideo.currentTime = scrubbervideo.duration * y.progress;
+		},
+		{
+		target: document.querySelector(".videoscroller"),
+		offset: ["start end", "end start"]
+		}
+	);
+</script>

@@ -4,49 +4,6 @@ import { Image } from "astro:assets";
 import publikum from "../assets/images/publikum-bagfra.svg";
 ---
 
-<!-- Hest bryder billede – Parallaxgrafik -->
-     <section class="pt-1" id="parallaxgrafik">
-        <section class="parallaxgrafik fullwidthsection bg-red-100" style="background-image: url('/baggrund-loeb.png)">	
-            <div id="parallaxgrafik1" class="mt-8 h-screen w-full bg-cover bg-center grid grid-cols-12 overflow-hidden">
-                <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-                <dotlottie-player src="https://lottie.host/33b57535-d5de-42f0-b1d7-1903d297de44/xE7bYHCiS0.json" background="transparent" speed="2.5" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-                </div>
-        </section>  
-
-        <script>
-            /* Import af Motion One bibliotek */
-            import { animate, scroll } from "motion";
-            scroll(animate("#parallaxgrafik1", { y: [-400, 600] }), {
-            target: document.querySelector(".parallaxgrafik"), offset: ["start end", "end start"]
-            });
-        </script>
-
-
-<!-- Kvinde kaster hat – Sidewaysscroll -->
-<section class="bg-blue-200" id="lydeffekter" x-data="">
-    <audio x-ref="trykforatafspillelyd" loop autoplay class="z-100">
-        <source src="" type="audio/mp3">
-    </audio>
-
-    <div class="overflow-clip bg-cover">
-     <div class= "sticky top-48 left-0 right-0 bottom-0 h-cover bg-cover bg-center walkinview">
-        <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-        <dotlottie-player src="https://lottie.host/509a9ff9-30cc-4ae3-b73e-f60dcb1c8cf9/5ArRxrKPSc.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-        </div>
-     <div>
-     <div class="relative flex justify-end">
-        <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 ">
-            <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
-                <p class="text-center font-display">Og så er der hende. Hun kaster sin hat op i luften. Smilene, latteren, glæden. Det er ikke bare et løb. Det er en fest. En hyldest til traditionen</p>
-            </div>
-        </div>
-    </div>
-    <div class="h-[80vh]"></div>
-    </div>
-    </div>
- </section>
-
-
 <!--Skåler sektion – Zoom ind -->
 <section class="bg-[#B4CEF4]" id="lydeffekter" x-data="">
     <audio x-ref="trykforatafspillelyd">
@@ -70,8 +27,26 @@ import publikum from "../assets/images/publikum-bagfra.svg";
     <div class="h-[80vh]"></div>
  </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
  <!-- Kammerater skåler sektion -->
- <div class="h-80 bg-gradient-to-b from-blue-300 to-blue-400"></div>
+ <!-- <div class="h-80 bg-gradient-to-b from-blue-300 to-blue-400"></div>
  <section class="bg-blue-400 flex items-center justify-center min-h-screen" id="lydeffekter">
     <div class="absolute bg-black-100/50 text-white-100 text-[18px] p-10 mb-96 mt-40">
         <p class="text-center font-display">Det er blevet en tradition, det her. <br> <br> Et sted hvor venner mødes, hvor gamle minder opstår, og hvor nye skabes.</p>
@@ -79,5 +54,5 @@ import publikum from "../assets/images/publikum-bagfra.svg";
 
     <div class="flex flex-col items-center justify-center ">
     </div>
-</section>
+</section> -->
 

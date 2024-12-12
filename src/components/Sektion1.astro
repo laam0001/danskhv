@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import heroImg from "../assets/images/bg-hero.webp";
+import heroImgDesktop from ""
 ---
 
 
@@ -24,6 +25,21 @@ import heroImg from "../assets/images/bg-hero.webp";
     <div class="absolute top-72 right-4">
         <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
         <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 420px; height: 420px" loop autoplay></dotlottie-player>
+    </div>
+
+
+    <h1 class="px-4 text-5xl lg:text-7xl mt-14 text-green-400 barlow-condensed-bold">Fællesskabet venter...</h1>
+    <Image class="lg:hidden lg:w-[1000px] lg:-mt-20" src={heroImg} alt="publikum med hatte på"></Image>
+    <Image class="invisible lg:visible h-screen" src={heroImgDesktop} alt="publikum med hatte på"></Image>
+
+    <div class="lg:hidden absolute top-72 right-4">
+        <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+        <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 420px; height: 420px;" id="hest" loop autoplay></dotlottie-player>
+    </div>
+
+    <div class="invisible lg:visible absolute top-64 ml-48">
+        <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+        <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 820px; height: 820px;" id="hest" loop autoplay></dotlottie-player>
     </div>
 
 </section>

@@ -3,21 +3,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 import heroImg from "../assets/images/bg-hero.webp";
 import heroDesktop from "../assets/images/hero-desktop.webp";
+import Audio from "../components/Audio.astro";
 ---
 
 
 <section class="bg-green-100 py-0" id="lydeffekter" x-data>
-    <audio x-ref="trykforatafspillelyd" loop autoplay class="z-100">
-        <source src="https://lna-mediedesign.dk/sound-dronning.mp3" type="audio/mpeg">
-    </audio>
-
-    <div id="audio-global" class="flex justify-end playing">
-        <img src="/sound-on.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 -mt-14 mr-4" @click="$refs.trykforatafspillelyd.play()" id="audio-global"></img>
-    </div>
-    
-        <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 -mt-14 mr-4" @click="$refs.trykforatafspillelyd.pause()" id="audio-global-mute"></img>
+    <Audio></Audio>
         
-
         <h1 class="px-4 text-5xl lg:text-7xl mt-14 mx-4  lg:-mt-14 lg:text-center text-green-400 barlow-condensed-bold absolute z-20 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/3">
             Fællesskabet venter...
         </h1>

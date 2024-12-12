@@ -2,13 +2,13 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import { Image } from "astro:assets";
-import Sektion1 from "../components/Sektion1.astro";
-import  Sektion2 from "../components/Sektion2.astro";
-import Sektion3 from "../components/Sektion3.astro";
-import Sektion4 from "../components/Sektion4.astro";
 import soundOn from "../assets/images/sound-on.webp";
 
-import Sektion6 from "../components/Sektion6.astro";
+import Sektion1 from "../components/Sektion1.astro";
+import Sektion2 from "../components/Sektion2.astro";
+import Sektion3 from "../components/Sektion3.astro";
+import Sektion4 from "../components/Sektion4.astro";
+import Sektion5 from "../components/Sektion5.astro";
 
 
 function changeImage(){
@@ -43,9 +43,9 @@ function changeImage(){
         <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
         <dotlottie-player src="https://lottie.host/0b47570c-647e-4616-957f-a868ab994562/HIJPTb6s1a.json" background="transparent" speed="3.5" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
 
-        
-    
-    <Sektion6></Sektion6>
+<!-- Videoscrubber -->
+    <Sektion5></Sektion5>
+
 
      </section>
 </MainLayout>

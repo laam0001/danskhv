@@ -19,7 +19,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         src="/sound-off.webp" 
         alt="Lyd på" 
         loading="lazy" 
-        class="z-10 fixed cursor-pointer w-20 -mt-8 mr-4" 
+        class="z-10 fixed cursor-pointer w-20 -mt-8 mr-4 lg:mr-10" 
         @click="isPlaying = true; $refs.trykforatafspillelyd.play()" 
         id="audio-global-on"
     />
@@ -30,7 +30,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         src="/sound-on.webp" 
         alt="Lyd af" 
         loading="lazy" 
-        class="z-10 fixed cursor-pointer w-20 -mt-8 mr-4" 
+        class="z-10 fixed cursor-pointer w-20 -mt-8 mr-4 lg:mr-10" 
         @click="isPlaying = false; $refs.trykforatafspillelyd.pause()" 
         id="audio-global-off"
     />

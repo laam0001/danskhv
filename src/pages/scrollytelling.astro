@@ -12,12 +12,6 @@ import Sektion5 from "../components/Sektion5.astro";
 import Sektion6 from "../components/Sektion6.astro";
 import Sektion7 from "../components/Sektion7.astro";
 
-
-function changeImage(){
-  document.getElementById("audio-global-mute").style.visibility = 'hidden';
-  document.getElementById("audio-global").style.visibility = 'visible';
-} 
-
 ---
 
 <MainLayout title="Forside | Dansk Hestevæddeløb">
@@ -25,7 +19,7 @@ function changeImage(){
     <Sektion1></Sektion1>
 
     <!-- Gradient overgang -->
-        <div class="h-64 bg-gradient-to-b from-green-100 to-red-100"></div>
+        <div class="h-64 lg:-mb-28 bg-gradient-to-b from-green-100 to-red-100"></div>
 
 <!--Dronning sektion -->
     <Sektion2></Sektion2>
@@ -35,6 +29,9 @@ function changeImage(){
 
 <!-- 1954 -->
      <Sektion4></Sektion4>
+
+
+
      
 <!-- Animations -->
     <section>
@@ -115,20 +112,6 @@ function changeImage(){
     scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
 		target: document.querySelector(".stickyparallax1"),
 	});
-
-    /* Scroll scrubber */
-	const scrubbervideo = document.querySelector("#videofil");
-	scrubbervideo.pause();	
-	scroll(
-		({ y }) => {
-		if (!scrubbervideo.readyState) return;
-		scrubbervideo.currentTime = scrubbervideo.duration * y.progress;
-		},
-		{
-		target: document.querySelector(".videoscroller"),
-		offset: ["start end", "end end"]
-		}
-	);
 
 </script>
 

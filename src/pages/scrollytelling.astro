@@ -43,31 +43,28 @@ import Sektion7 from "../components/Sektion7.astro";
         }
     }" x-init="initObserver()">
 
-<!-- Hero -->
+
+<!-- 1. Hero -->
 <section id="section1" class="scroll-section" x-on:click="playAudio('audio1')" >
     <!-- Afspil specifik lyd på denne sektion -->
     <audio x-ref="audio1" preload="auto">
         <source src="https://lna-mediedesign.dk/section1.mp3" type="audio/mpeg">
     </audio>
-
     <Sektion1></Sektion1>
 </section>
 
-
-    <!-- Gradient overgang -->
+ <!-- Gradient overgang -->
         <div class="h-64 lg:-mb-28 bg-gradient-to-b from-green-100  to-red-100 lg:from-[#c9d5a3] lg:to-red-100 lg:h-96"></div>
 
-
-<!--Dronning sektion -->
+<!-- 2. Dronning sektion -->
 <section id="section2" class="scroll-section" x-on:click="playAudio('audio2')">
     <audio x-ref="audio2" preload="auto">
         <source src="https://lna-mediedesign.dk/sound-dronning.mp3" type="audio/mpeg">
     </audio> 
-
     <Sektion2></Sektion2>
 </section>
 
-<!-- Krig og forræderi -->
+<!-- 3. Krig og forræderi -->
 <section id="section3" class="scroll-section" x-on:click="playAudio('audio3')">
     <audio x-ref="audio3" preload="auto">
         <source src="https://lna-mediedesign.dk/section3.mp3" type="audio/mpeg">
@@ -78,7 +75,7 @@ import Sektion7 from "../components/Sektion7.astro";
      <!-- Gradient overgang -->
      <div class="h-72 lg:h-screen bg-gradient-to-b from-[#7c3846] to-brown-100"></div>
 
-<!-- 1954 -->
+<!-- 4. 1954 -->
 <section id="section4" class="scroll-section" x-on:click="playAudio('audio4')">
     <audio x-ref="audio4" preload="auto">
         <source src="https://lna-mediedesign.dk/1954.mp3" type="audio/mpeg">
@@ -86,21 +83,29 @@ import Sektion7 from "../components/Sektion7.astro";
      <Sektion4></Sektion4>
 </section>
 
-    <section>
+<!-- 5. Spændingsmusik -->
+<section id="section5" class="scroll-section" x-on:click="playAudio('audio5')">
+    <audio x-ref="audio5" preload="auto">
+        <source src="https://idahallback-multimedie.netlify.app/sp%C3%A6ndingsmusik.m4a" type="audio/mpeg">
+    </audio>
+     <Sektion5></Sektion5>
+</section>
 
-<!-- Videoscrubber -->
-    <!-- <Sektion5></Sektion5> -->
+<!-- 6. Gallop afslutning -->
+<section id="section6" class="scroll-section" x-on:click="playAudio('audio6')">
+    <audio x-ref="audio6" preload="auto">
+        <source src="https://idahallback-multimedie.netlify.app/bestfriends-cheering.m4a" type="audio/mpeg">
+    </audio>
+     <Sektion6></Sektion6>
+</section>
 
-<!-- Skifte billede -->
-    <Sektion5></Sektion5>
-
-<!-- Gallop -->
-    <Sektion6></Sektion6>
-
-<!-- Kvinde kaster hat -->
-    <Sektion7></Sektion7>
-
-     </section>
+<!-- 7. Kvinde kaster hat med jubel -->
+<section id="section7" class="scroll-section" x-on:click="playAudio('audio7')">
+    <audio x-ref="audio7" preload="auto">
+        <source src="https://idahallback-multimedie.netlify.app/afsluttende_musik.m4a" type="audio/mpeg">
+    </audio>
+     <Sektion7></Sektion7>
+</section>
      
 </MainLayout>
 

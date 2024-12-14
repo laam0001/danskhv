@@ -5,7 +5,7 @@
   style="z-index: 3;"
 >
   <!-- Navbar -->
-  <div id="navbar" x-bind:class="isScrollingDown ? 'hidden-navbar' : ''" class="flex lg:text-2xl flex-row justify-between bg-red-200">
+  <div id="navbar" x-bind:class="isScrollingDown ? 'hidden-navbar' : ''" class="flex lg:text-2xl flex-row justify-between bg-red-200 border-b-2 border-red-400">
     <a href="/">
         <div
         id="logo"
@@ -63,7 +63,7 @@
   <!-- Mobile Menu (Hidden until clicked) -->
   <nav
     id="mobilmenu"
-    class="flex flex-col content-center pt-4 bg-red-200"
+    class="flex flex-col content-center pt-4 bg-red-200 "
     x-show="showmenu"
     x-transition:enter="transition-opacity ease-in-out duration-500"
     x-transition:enter-start="opacity-0"

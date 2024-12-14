@@ -5,7 +5,11 @@
   style="z-index: 3;"
 >
   <!-- Navbar -->
-  <div id="navbar" x-bind:class="isScrollingDown ? 'hidden-navbar' : ''" class="flex lg:text-2xl flex-row justify-between bg-red-200 border-b-2 border-red-400">
+  <div 
+  id="navbar" 
+  x-bind:class="isScrollingDown ? 'hidden-navbar' : (showmenu ? 'border-transparent' : 'border-b-2 border-red-400')" 
+  class="flex lg:text-2xl flex-row justify-between bg-red-200 transition-all duration-300"
+>
     <a href="/">
         <div
         id="logo"
@@ -42,10 +46,10 @@
 
       <li>
           <button>
-            <a href="/search">
+            <a href="/#">
               <div
               id="search"
-              class="w-[20px] h-[20px] bg-[url('icons/search.svg')] bg-cover transition duration-400 ease-in-out">
+              class="mt-1 w-[20px] h-[20px] bg-[url('icons/search.svg')] bg-cover transition duration-400 ease-in-out">
             </div>
             </a>
           </button>
@@ -56,7 +60,7 @@
     <!-- Burger Menu Button (for Mobile) -->
     <button
       id="burgermenu"
-      class="lg:hidden text-xl p-6 text-text-header font-sans"
+      class="lg:hidden text-xl p-6 text-text-header font-sans hover:underline hover:underline-offset-8 decoration-2"
       x-on:click="showmenu = !showmenu">Menu</button>
   </div>
 
@@ -74,31 +78,31 @@
     x-on:click="showmenu = false"
     x-on:click.outside="showmenu = false"
   >
-    <ul>
-      <li class="text-center text-xl py-2 pt-1 text-text-header " x-transition:enter-delay="200">
+    <ul class="border-b-2 border-red-400 pt-20 pb-4">
+      <li class="text-center text-xl py-2 pt-1 text-text-header hover:underline hover:underline-offset-8 decoration-2" x-transition:enter-delay="200">
         <a href="#">Ungdom</a>
       </li>
 
         <li
-          class="text-center text-xl py-2 pt-1 text-text-header"
+          class="text-center text-xl py-2 pt-1 text-text-header hover:underline hover:underline-offset-8 decoration-2"
           x-transition:enter-delay="300"
         >
           <a href="#">Sikkerhed</a>
         </li>
         <li
-          class="text-center text-xl py-2 pt-1 text-text-header"
+          class="text-center text-xl py-2 pt-1 text-text-header hover:underline hover:underline-offset-8 decoration-2"
           x-transition:enter-delay="400"
         >
           <a href="#">Hestevelfærd</a>
         </li>
         <li
-          class="text-center text-xl py-2 pt-1 text-text-header"
+          class="text-center text-xl py-2 pt-1 text-text-header hover:underline hover:underline-offset-8 decoration-2"
           x-transition:enter-delay="400"
         >
           <a href="#">Hesteejere</a>
         </li>
         <li
-          class="text-center text-xl py-2 pt-1 text-text-header"
+          class="text-center text-xl py-2 pt-1 text-text-header hover:underline hover:underline-offset-8 decoration-2"
           x-transition:enter-delay="200"
         >
           <a href="/scrollytelling">Kampagne</a>

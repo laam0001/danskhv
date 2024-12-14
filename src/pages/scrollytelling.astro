@@ -11,24 +11,80 @@ import Sektion4 from "../components/Sektion4.astro";
 import Sektion5 from "../components/Sektion5.astro";
 import Sektion6 from "../components/Sektion6.astro";
 import Sektion7 from "../components/Sektion7.astro";
-
 ---
 
 <MainLayout title="Forside | Dansk Hestevæddeløb">
+
+    <div x-data="{
+        audioPlaying: false,
+        activeSection: null,
+        playAudio(sectionId) {
+            if (this.activeSection === sectionId) return; // Hvis denne sektion allerede spiller, gør ikke noget
+            if (this.activeSection) {
+                const oldAudio = this.$refs[this.activeSection];
+                if (oldAudio) oldAudio.pause(); // Stop den tidligere lyd
+            }
+            this.activeSection = sectionId;
+            this.$refs[sectionId].play(); // Start den nye lyd
+        },
+        initObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const sectionId = entry.target.id;
+                    if (entry.isIntersecting) {
+                        this.playAudio(sectionId); // Afspil lyd når sektionen er synlig
+                    }
+                });
+            }, { threshold: 0.8 }); // Sektionen skal være 50% synlig
+    
+            document.querySelectorAll('.scroll-section').forEach(section => {
+                observer.observe(section); // Begynd at observere hver sektion
+            });
+        }
+    }" x-init="initObserver()">
+
 <!-- Hero -->
+<section id="section1" class="scroll-section" x-on:click="playAudio('audio1')" >
+    <!-- Afspil specifik lyd på denne sektion -->
+    <audio x-ref="audio1" preload="auto">
+        <source src="https://lna-mediedesign.dk/section1.mp3" type="audio/mpeg">
+    </audio>
+
     <Sektion1></Sektion1>
+</section>
+
 
     <!-- Gradient overgang -->
-        <div class="h-64 lg:-mb-28 bg-gradient-to-b from-green-100 to-red-100"></div>
+        <div class="h-64 lg:-mb-28 bg-gradient-to-b from-green-100  to-red-100 lg:from-[#c9d5a3] lg:to-red-100 lg:h-96"></div>
+
 
 <!--Dronning sektion -->
+<section id="section2" class="scroll-section" x-on:click="playAudio('audio2')">
+    <audio x-ref="audio2" preload="auto">
+        <source src="https://lna-mediedesign.dk/sound-dronning.mp3" type="audio/mpeg">
+    </audio> 
+
     <Sektion2></Sektion2>
+</section>
 
 <!-- Krig og forræderi -->
+<section id="section3" class="scroll-section" x-on:click="playAudio('audio3')">
+    <audio x-ref="audio3" preload="auto">
+        <source src="https://lna-mediedesign.dk/section3.mp3" type="audio/mpeg">
+    </audio>
     <Sektion3></Sektion3>
+</section>
+
+     <!-- Gradient overgang -->
+     <div class="h-72 lg:h-screen bg-gradient-to-b from-[#7c3846] to-brown-100"></div>
 
 <!-- 1954 -->
+<section id="section4" class="scroll-section" x-on:click="playAudio('audio4')">
+    <audio x-ref="audio4" preload="auto">
+        <source src="https://lna-mediedesign.dk/1954.mp3" type="audio/mpeg">
+    </audio>
      <Sektion4></Sektion4>
+</section>
 
 
 

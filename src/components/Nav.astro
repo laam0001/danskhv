@@ -1,11 +1,11 @@
 
 <div
   x-data="{ showmenu: false, isScrollingDown: false }"
-  class="bg-[#012F4A] p-0 w-full"
+  class="bg-red-200 p-0 w-full"
   style="z-index: 3;"
 >
   <!-- Navbar -->
-  <div id="navbar" x-bind:class="isScrollingDown ? 'hidden-navbar' : ''" class="flex lg:text-2xl flex-row justify-between bg-[#012F4A]">
+  <div id="navbar" x-bind:class="isScrollingDown ? 'hidden-navbar' : ''" class="flex lg:text-2xl flex-row justify-between bg-red-200 border-b-2 border-red-400">
     <a href="/">
         <div
         id="logo"
@@ -14,29 +14,29 @@
     </a>
     
     <nav id="desktopmenu" class="hidden lg:block p-8">
-      <ul class="flex flex-row gap-8 mt-1 font-sans">
+      <ul class="flex flex-row gap-8 mt-1 barlow-condensed-bold">
        
-        <li class="lg:text-lg uppercase text-text-primary hover:underline hover:underline-offset-8 decoration-2 ">
+        <li class="lg:text-lg uppercase text-text-header hover:underline hover:underline-offset-8 decoration-2 font-sans">
           <a href="#">Ungdom</a>
         </li>
 
-        <li class="lg:text-lg uppercase text-text-primary hover:underline hover:underline-offset-8 decoration-2 ">
+        <li class="lg:text-lg uppercase text-text-header hover:underline hover:underline-offset-8 decoration-2 font-sans">
           <a href="#">Sikkerhed</a>
         </li>
 
-        <li class="lg:text-lg uppercase text-text-primary hover:underline hover:underline-offset-8 decoration-2 ">
+        <li class="lg:text-lg uppercase text-text-header hover:underline hover:underline-offset-8 decoration-2 font-sans">
           <a href="#">Hestevelfærd</a>
         </li>
 
-        <li class="lg:text-lg uppercase text-text-primary hover:underline hover:underline-offset-8 decoration-2 ">
+        <li class="lg:text-lg uppercase text-text-header hover:underline hover:underline-offset-8 decoration-2 font-sans">
           <a href="#">Hestejere</a>
         </li>
 
-        <li class="lg:text-lg uppercase text-text-primary hover:underline hover:underline-offset-8 decoration-2 ">
+        <li class="lg:text-lg uppercase text-text-header hover:underline hover:underline-offset-8 decoration-2 font-sans">
           <a href="/scrollytelling">Kampagne</a>
         </li>
 
-        <li class="lg:text-lg uppercase text-text-primary hover:underline hover:underline-offset-8 decoration-2 ">
+        <li class="lg:text-lg uppercase text-text-header hover:underline hover:underline-offset-8 decoration-2 font-sans">
           <a href="/sound">Lyd</a>
         </li>
 
@@ -56,14 +56,14 @@
     <!-- Burger Menu Button (for Mobile) -->
     <button
       id="burgermenu"
-      class="lg:hidden text-xl p-6 text-text-primary"
+      class="lg:hidden text-xl p-6 text-text-header font-sans"
       x-on:click="showmenu = !showmenu">Menu</button>
   </div>
 
   <!-- Mobile Menu (Hidden until clicked) -->
   <nav
     id="mobilmenu"
-    class="flex flex-col content-center pt-4 bg-[#012F4A]"
+    class="flex flex-col content-center pt-4 bg-red-200 "
     x-show="showmenu"
     x-transition:enter="transition-opacity ease-in-out duration-500"
     x-transition:enter-start="opacity-0"
@@ -75,30 +75,30 @@
     x-on:click.outside="showmenu = false"
   >
     <ul>
-      <li class="text-center text-xl py-2 pt-1 text-[white] " x-transition:enter-delay="200">
+      <li class="text-center text-xl py-2 pt-1 text-text-header " x-transition:enter-delay="200">
         <a href="#">Ungdom</a>
       </li>
 
         <li
-          class="text-center text-xl py-2 pt-1 text-[white]"
+          class="text-center text-xl py-2 pt-1 text-text-header"
           x-transition:enter-delay="300"
         >
           <a href="#">Sikkerhed</a>
         </li>
         <li
-          class="text-center text-xl py-2 pt-1 text-[white]"
+          class="text-center text-xl py-2 pt-1 text-text-header"
           x-transition:enter-delay="400"
         >
           <a href="#">Hestevelfærd</a>
         </li>
         <li
-          class="text-center text-xl py-2 pt-1 text-[white]"
+          class="text-center text-xl py-2 pt-1 text-text-header"
           x-transition:enter-delay="400"
         >
           <a href="#">Hesteejere</a>
         </li>
         <li
-          class="text-center text-xl py-2 pt-1 text-[white]"
+          class="text-center text-xl py-2 pt-1 text-text-header"
           x-transition:enter-delay="200"
         >
           <a href="/scrollytelling">Kampagne</a>

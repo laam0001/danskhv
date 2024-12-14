@@ -8,7 +8,13 @@ import Kalender from "../components/Kalender.astro";
 <MainLayout title="Forside | Dansk Hestevæddeløb">  
     <Hero></Hero>
 
-    <Kalender></Kalender>
+ <div class="p-10 mt-10 gap-10">
+    <h2 class="text-green-400 font-display font-bold text-5xl lg:text-6xl">Se kommende løb</h2>
+    
+    <Kalender dato="27" måned="December" tidspunkt="Fredag - 15.45" beliggenhed="Charlottenlund" info="Nytårstrav"/>
+    <Kalender dato="29" måned="December" tidspunkt="Søndag - 13.30" beliggenhed="Aalborg" info="V75 Winter Burst"/>
+    <Kalender dato="30" måned="December" tidspunkt="Mandag - 16.00" beliggenhed="Aarhus" info="Nytårsløbet - finalen 2024"/>
+</div>
 
     <Nyheder></Nyheder>
 

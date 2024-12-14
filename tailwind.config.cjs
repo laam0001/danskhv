@@ -58,6 +58,7 @@ module.exports = {
           primary: "#FFFFFF",
           secondary: "#E0EFFA",
           tertiary: "#000000",
+          header: "#A8324C",
         },
       },
 

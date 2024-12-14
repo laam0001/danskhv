@@ -72,6 +72,11 @@ module.exports = {
           "50%": { transform: "translateY(15px)" },
           "100%": { transform: "translateX(0px)" },
         },
+
+        spinning: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-50deg)' },
+        }
       },
 
       animation: {
@@ -80,6 +85,10 @@ module.exports = {
 
       animation: {
         looking: "looking 5s ease-in-out",
+      },
+
+      animation: {
+        spinning: "spinning 5s ease-in-out infinite',"
       },
     },
   },

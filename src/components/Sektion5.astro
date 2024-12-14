@@ -12,20 +12,3 @@
                 <p class="text-center font-display">Det er her, adrenalinen rammer. Det er her, hjertet banker stærkere. Når løbet går i gang, er der ikke noget, der kan måle sig med denne spænding.</p>
             </div>
         </div>
-
-
-    
-<script>
-	const scrubbervideo = document.querySelector("#videofil");
-	scrubbervideo.pause();	
-	scroll(
-		({ y }) => {
-		if (!scrubbervideo.readyState) return;
-		scrubbervideo.currentTime = scrubbervideo.duration * y.progress;
-		},
-		{
-		target: document.querySelector(".videoscroller"),
-		offset: ["start end", "end start"]
-		}
-	);
-</script>

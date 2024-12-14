@@ -76,6 +76,11 @@ module.exports = {
         spinning: {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(-50deg)' },
+        },
+
+        riding: {
+          "0%": { transform: "translate(-150%, -100%)" },
+          "100%": { transform: "translate(100px, 100px)" },        
         }
       },
 
@@ -88,8 +93,13 @@ module.exports = {
       },
 
       animation: {
-        spinning: "spinning 5s ease-in-out infinite',"
+        spinning: "spinning 5s ease-in-out infinite",
       },
+
+      animation: {
+        riding: "riding 10s ease-in-out infinite",
+      },
+
     },
   },
 };

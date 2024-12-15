@@ -1,3 +1,7 @@
+
+
+<!-- Ida´s kode 
+
 <div class="bg-white-100 videocontainer relative w-full h-full">
     <video autoplay muted loop playsinline class="w-full h-full object-cover" id="videofil">
         <source src="/video-scrubber.mp4" type="video/mp4">
@@ -31,3 +35,76 @@
     const video = document.getElementById('videofil');
     video.playbackRate = 0.2;
 </script>
+
+-->
+
+
+
+<!-- Ny Kode -->
+<section id="section4" class="bg-brown-100 pt-10 lg:-mt-[800px]">
+
+    <!-- Mobil video -->
+    <div class="lg:hidden videocontainer sticky top-[0%] w-full h-screen">
+      <video muted loop playsinline class="w-full" id="videofil-mobil2">
+          <source src="https://lna-mediedesign.dk/horse-in-mobile.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/horse-in-mobile.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="h-screen videoscroller2"></div>
+  
+    <!-- Desktop video -->
+    <div class="hidden lg:block videocontainer sticky top-[0%] w-full">
+      <video muted loop playsinline class="w-full" id="videofil-desktop2">
+          <source src="https://lna-mediedesign.dk/horse-in-desktop.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/horse-in-desktop.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="h-screen videoscrollerdesktop2"></div>
+
+    <div class="relative flex justify-end"><!-- relative elementet -->
+        <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 lg:mx-32 lg:w-[500px]">
+            <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
+                <p class="text-center">Kom og mærk suset.</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-[80vh]"></div>
+
+    <div class="h-96 bg-[#b2deec]"></div>
+
+  </section>
+  
+
+
+<script>
+    import { scroll } from "motion"; 
+    
+    /* Scroll scrubber - Mobil */
+	const scrubbervideomobil = document.querySelector("#videofil-mobil2");
+	scrubbervideomobil.pause();	
+	scroll(
+		({ y }) => {
+		if (!scrubbervideomobil.readyState) return;
+		scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
+		},
+		{
+		target: document.querySelector(".videoscroller2"),
+		offset: ["start end", "end start"]
+		}
+	);
+
+
+    /* Scroll scrubber - Desktop */
+	const scrubbervideodesktop = document.querySelector("#videofil-desktop2");
+	scrubbervideodesktop.pause();	
+	scroll(
+		({ y }) => {
+		if (!scrubbervideo.readyState) return;
+		scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
+		},
+		{
+		target: document.querySelector(".videoscrollerdesktop2"),
+		offset: ["start end", "end start"]
+		}
+	);
+ </script>

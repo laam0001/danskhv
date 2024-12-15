@@ -45,7 +45,7 @@ import glas from "../assets/images/glas.webp";
             <source src="https://lna-mediedesign.dk/glasvideo.webm" type="video/webm">
         </video>
         </div>
-    <div class="h-screen videoscroller"></div>
+    <div class="h-screen videoscrollerdesktop"></div>
 
 
     <div class="relative flex justify-end"><!-- relative elementet -->
@@ -93,7 +93,7 @@ import glas from "../assets/images/glas.webp";
 		scrubbervideoDesktop.currentTime = scrubbervideoDesktop.duration * y.progress;
 		},
 		{
-		target: document.querySelector(".videoscroller"),
+		target: document.querySelector(".videoscrollerdesktop"),
 		offset: ["start end", "end end"]
 		}
 	);

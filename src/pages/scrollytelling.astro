@@ -11,6 +11,7 @@ import Sektion4 from "../components/Sektion4.astro";
 import Sektion5 from "../components/Sektion5.astro";
 import Sektion6 from "../components/Sektion6.astro";
 import Sektion7 from "../components/Sektion7.astro";
+import Sektion8 from "../components/Sektion8.astro";
 ---
 
 <MainLayout title="DHV – Historisk Fællesskab | Kampagne">
@@ -83,7 +84,7 @@ import Sektion7 from "../components/Sektion7.astro";
      <Sektion4></Sektion4>
 </section>
 
-<!-- 5. Spændingsmusik -->
+<!-- 5. Røgsky - Spændingsmusik -->
 <section id="section5" class="scroll-section" x-on:click="playAudio('audio5')">
     <audio x-ref="audio5" preload="auto">
         <source src="https://idahallback-multimedie.netlify.app/sp%C3%A6ndingsmusik.m4a" type="audio/mpeg">
@@ -99,12 +100,23 @@ import Sektion7 from "../components/Sektion7.astro";
      <Sektion6></Sektion6>
 </section>
 
-<!-- 7. Kvinde kaster hat med jubel -->
+    <!-- Gradient overgang -->
+    <div class="h-screen lg:-mb-28 bg-gradient-to-b from-blue-100  to-brown-100 lg:from-[#c9d5a3] lg:to-red-100 lg:h-96"></div>
+
+<!--7. Hest nedefra -->
+<section id="section7" class="scroll-section" x-on:click="playAudio('audio7')">
+    <audio x-ref="audio7" preload="auto">
+        <source src="https://idahallback-multimedie.netlify.app/bestfriends-cheering.m4a" type="audio/mpeg">
+    </audio>
+     <Sektion7></Sektion7>
+</section>
+
+<!-- 8. Kvinde kaster hat med jubel -->
 <section id="section7" class="scroll-section" x-on:click="playAudio('audio7')">
     <audio x-ref="audio7" preload="auto">
         <source src="https://idahallback-multimedie.netlify.app/afsluttende_musik.m4a" type="audio/mpeg">
     </audio>
-     <Sektion7></Sektion7>
+     <Sektion8></Sektion8>
 </section>
      
 </MainLayout>
@@ -128,6 +140,24 @@ import Sektion7 from "../components/Sektion7.astro";
 
     return () => {
         animate( ".look1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 })
+    }
+    })
+
+    inView( ".jumpinview", () =>{
+    animate( ".jump1", { x: [0, 0 ], y: [800, -900 ] }, { duration: 5, delay: 2 }) 
+    
+
+    return () => {
+        animate( ".jump1", { x: [0, 0 ], y: [700, -900 ] }, { duration: 5 })
+    }
+    })
+
+    inView( ".jumpinview", () =>{
+    animate( ".jump2", { x: [0, 0 ], y: [800, -900 ] }, { duration: 6, delay: 3 }) 
+    
+
+    return () => {
+        animate( ".jump2", { x: [0, 0 ], y: [700, -900 ] }, { duration: 6 })
     }
     })
 

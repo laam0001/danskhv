@@ -40,7 +40,7 @@
 
 
 
-<!-- Ny Kode -->
+<!-- Ny Kode -- Røgsky -->
 <section id="section4" class="bg-brown-100 pt-10 lg:-mt-[800px]">
 
     <!-- Mobil video -->
@@ -99,7 +99,7 @@
 	scrubbervideodesktop.pause();	
 	scroll(
 		({ y }) => {
-		if (!scrubbervideo.readyState) return;
+		if (!scrubbervideodesktop.readyState) return;
 		scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
 		},
 		{

@@ -101,7 +101,7 @@ import Sektion8 from "../components/Sektion8.astro";
 </section>
 
     <!-- Gradient overgang -->
-    <div class="h-screen lg:-mb-28 bg-gradient-to-b from-blue-100  to-brown-100 lg:from-[#c9d5a3] lg:to-red-100 lg:h-96"></div>
+    <div class="h-screen lg:-mb-28 bg-gradient-to-b from-blue-100  to-brown-100"></div>
 
 <!--7. Hest nedefra -->
 <section id="section7" class="scroll-section" x-on:click="playAudio('audio7')">
@@ -144,20 +144,20 @@ import Sektion8 from "../components/Sektion8.astro";
     })
 
     inView( ".jumpinview", () =>{
-    animate( ".jump1", { x: [0, 0 ], y: [800, -900 ] }, { duration: 5, delay: 2 }) 
+    animate( ".jump1", { x: [0, 0 ], y: [800, -1500 ] }, { duration: 7, delay: 2 }) 
     
 
     return () => {
-        animate( ".jump1", { x: [0, 0 ], y: [700, -900 ] }, { duration: 5 })
+        animate( ".jump1", { x: [0, 0 ], y: [700, -1500 ] }, { duration: 7 })
     }
     })
 
     inView( ".jumpinview", () =>{
-    animate( ".jump2", { x: [0, 0 ], y: [800, -900 ] }, { duration: 6, delay: 3 }) 
+    animate( ".jump2", { x: [0, 0 ], y: [800, -1500 ] }, { duration: 8, delay: 3 }) 
     
 
     return () => {
-        animate( ".jump2", { x: [0, 0 ], y: [700, -900 ] }, { duration: 6 })
+        animate( ".jump2", { x: [0, 0 ], y: [700, -1500 ] }, { duration: 8 })
     }
     })
 

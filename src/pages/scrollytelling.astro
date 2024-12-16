@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import { Image } from "astro:assets";
 import soundOn from "../assets/images/sound-on.webp";
+import heroImg from "../assets/images/bg-hero.webp";
+import heroDesktop from "../assets/images/hero-desktop.webp";
 
 import Sektion1 from "../components/Sektion1.astro";
 import Sektion2 from "../components/Sektion2.astro";
@@ -12,64 +14,62 @@ import Sektion5 from "../components/Sektion5.astro";
 import Sektion6 from "../components/Sektion6.astro";
 import Sektion7 from "../components/Sektion7.astro";
 import Sektion8 from "../components/Sektion8.astro";
+
+function changeImage(){
+  document.getElementById("audio-global-mute").style.visibility = 'hidden';
+  document.getElementById("audio-global").style.visibility = 'visible';
+} 
 ---
 
 <MainLayout title="DHV – Historisk Fællesskab | Kampagne">
 
-    <div x-data="{
-        audioPlaying: false,
-        activeSection: null,
-        playAudio(sectionId) {
-            if (this.activeSection === sectionId) return; // Hvis denne sektion allerede spiller, gør ikke noget
-            if (this.activeSection) {
-                const oldAudio = this.$refs[this.activeSection];
-                if (oldAudio) oldAudio.pause(); // Stop den tidligere lyd
-            }
-            this.activeSection = sectionId;
-            this.$refs[sectionId].play(); // Start den nye lyd
-        },
-        initObserver() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const sectionId = entry.target.id;
-                    if (entry.isIntersecting) {
-                        this.playAudio(sectionId); // Afspil lyd når sektionen er synlig
-                    }
-                });
-            }, { threshold: 0.8 }); // Sektionen skal være 50% synlig
-    
-            document.querySelectorAll('.scroll-section').forEach(section => {
-                observer.observe(section); // Begynd at observere hver sektion
-            });
-        }
-    }" x-init="initObserver()">
-
-
 <!-- 1. Hero -->
-<section id="section1" class="scroll-section" x-on:click="playAudio('audio1')" >
-    <!-- Afspil specifik lyd på denne sektion -->
-    <audio x-ref="audio1" preload="auto">
-        <source src="https://lna-mediedesign.dk/section1.mp3" type="audio/mpeg">
-    </audio>
-    <Sektion1></Sektion1>
+<section id="section1" class="section1">
+    <div class="bg-green-100 py-0">
+        <!-- Lyd on -->
+            
+            <div id="audio-global" class="flex justify-end">
+                <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" id="audio-global-button">
+            </div>
+            
+
+            <!-- Titel -->
+            <h1 class="px-4 text-5xl lg:text-7xl mt-36 mx-4  lg:-mt-14 lg:text-center text-green-400 font-display font-bold absolute z-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/3">
+                Fællesskabet venter...
+            </h1>
+            
+            <!-- Billede for mobil og tablet -->
+            <Image class="lg:hidden w-full h-auto mt-52" src={heroImg} alt="publikum med hatte på" />
+            
+            <!-- Billede for desktop -->
+            <div class="relative w-full h-auto lg:block hidden">
+                <Image class="w-full h-auto" src={heroDesktop} alt="publikum med hatte på" />
+                
+                <!-- Desktop animationen -->
+                <div class="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+                    <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 50vw; height: auto;" id="hest" loop autoplay></dotlottie-player>
+                </div>
+            </div>
+            
+            <!-- Mobile animation -->
+            <div class="lg:hidden absolute top-72 right-8">
+                <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+                <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 100vw; height: auto;" id="hest" loop autoplay></dotlottie-player>
+            </div>
+        </div>
 </section>
 
  <!-- Gradient overgang -->
         <div class="h-64 lg:-mb-28 bg-gradient-to-b from-green-100  to-red-100 lg:from-[#c9d5a3] lg:to-red-100 lg:h-96"></div>
 
 <!-- 2. Dronning sektion -->
-<section id="section2" class="scroll-section" x-on:click="playAudio('audio2')">
-    <audio x-ref="audio2" preload="auto">
-        <source src="https://lna-mediedesign.dk/sound-dronning.mp3" type="audio/mpeg">
-    </audio> 
+<section id="section2" class="section2">
     <Sektion2></Sektion2>
 </section>
 
 <!-- 3. Krig og forræderi -->
-<section id="section3" class="scroll-section" x-on:click="playAudio('audio3')">
-    <audio x-ref="audio3" preload="auto">
-        <source src="https://lna-mediedesign.dk/section3.mp3" type="audio/mpeg">
-    </audio>
+<section id="section3" class="section3">
     <Sektion3></Sektion3>
 </section>
 
@@ -77,26 +77,17 @@ import Sektion8 from "../components/Sektion8.astro";
      <div class="h-72 lg:h-screen bg-gradient-to-b from-[#7c3846] to-brown-100"></div>
 
 <!-- 4. 1954 -->
-<section id="section4" class="scroll-section" x-on:click="playAudio('audio4')">
-    <audio x-ref="audio4" preload="auto">
-        <source src="https://lna-mediedesign.dk/1954.mp3" type="audio/mpeg">
-    </audio>
+<section id="section4" class="section4">
      <Sektion4></Sektion4>
 </section>
 
 <!-- 5. Røgsky - Spændingsmusik -->
-<section id="section5" class="scroll-section" x-on:click="playAudio('audio5')">
-    <audio x-ref="audio5" preload="auto">
-        <source src="https://idahallback-multimedie.netlify.app/sp%C3%A6ndingsmusik.m4a" type="audio/mpeg">
-    </audio>
+<section id="section5" class="section5">
      <Sektion5></Sektion5>
 </section>
 
 <!-- 6. Gallop afslutning -->
-<section id="section6" class="scroll-section" x-on:click="playAudio('audio6')">
-    <audio x-ref="audio6" preload="auto">
-        <source src="https://idahallback-multimedie.netlify.app/bestfriends-cheering.m4a" type="audio/mpeg">
-    </audio>
+<section id="section6" class="section6" >
      <Sektion6></Sektion6>
 </section>
 
@@ -104,18 +95,12 @@ import Sektion8 from "../components/Sektion8.astro";
     <div class="h-screen lg:-mb-28 bg-gradient-to-b from-blue-100  to-brown-100"></div>
 
 <!--7. Hest nedefra -->
-<section id="section7" class="scroll-section" x-on:click="playAudio('audio7')">
-    <audio x-ref="audio7" preload="auto">
-        <source src="https://idahallback-multimedie.netlify.app/bestfriends-cheering.m4a" type="audio/mpeg">
-    </audio>
+<section id="section7" class="section7">
      <Sektion7></Sektion7>
 </section>
 
 <!-- 8. Kvinde kaster hat med jubel -->
-<section id="section7" class="scroll-section" x-on:click="playAudio('audio7')">
-    <audio x-ref="audio7" preload="auto">
-        <source src="https://idahallback-multimedie.netlify.app/afsluttende_musik.m4a" type="audio/mpeg">
-    </audio>
+<section id="section8" class="section8">
      <Sektion8></Sektion8>
 </section>
      
@@ -124,6 +109,93 @@ import Sektion8 from "../components/Sektion8.astro";
 
 <script>
     import { animate, inView, scroll } from "motion";
+
+    const baggrundslydknap = document.getElementById("audio-global-button");
+var baggrundslyd = new Audio('https://lna-mediedesign.dk/sound-dronning.mp3');
+var afspillerlyd = false;
+
+// Toggle play/pause when the button is clicked
+baggrundslydknap.addEventListener("click", toggleafspil);
+
+function toggleafspil() {
+    if (afspillerlyd) {
+        baggrundslyd.pause();
+    } else {
+        baggrundslyd.play();
+    }
+}
+
+// Update the button icon when the sound starts playing
+baggrundslyd.onplaying = function() {
+    afspillerlyd = true;
+    // Update the icon to 'sound off'
+    baggrundslydknap.src = '/sound-on.webp';
+};
+
+// Update the button icon when the sound is paused
+baggrundslyd.onpause = function() {
+    afspillerlyd = false;
+    // Update the icon to 'sound on'
+    baggrundslydknap.src = '/sound-off.webp';
+};
+
+
+    inView( ".section1", () =>{
+        console.log("section1");
+        baggrundslyd.src="https://lna-mediedesign.dk/section1.mp3";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
+
+    inView( ".section2", () =>{
+        console.log("section2");
+        baggrundslyd.src="https://lna-mediedesign.dk/sound-dronning.mp3";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
+
+    inView( ".section3", () =>{
+        console.log("section3");
+        baggrundslyd.src="https://lna-mediedesign.dk/section3.mp3";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
+
+    inView( ".section4", () =>{
+        console.log("section4");
+        baggrundslyd.src="https://lna-mediedesign.dk/1954.mp3";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
+
+    inView( ".section5", () =>{
+        console.log("section5");
+        baggrundslyd.src="https://idahallback-multimedie.netlify.app/sp%C3%A6ndingsmusik.m4a";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
+
+    inView( ".section", () =>{
+        console.log("section7");
+        baggrundslyd.src="https://idahallback-multimedie.netlify.app/bestfriends-cheering.m4a";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
+
+    inView( ".section", () =>{
+        console.log("section8");
+        baggrundslyd.src="https://idahallback-multimedie.netlify.app/afsluttende_musik.m4a";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
+
 
     inView( ".walkinview", () =>{
     animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 }) 

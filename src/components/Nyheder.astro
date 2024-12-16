@@ -1,65 +1,82 @@
 ---
 import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
+
 import nyhed1 from "../assets/images/forside-billeder/nyhed1.webp";
 import nyhed2 from "../assets/images/forside-billeder/nyhed2.webp";
 import nyhed3 from "../assets/images/forside-billeder/nyhed3.webp";
 ---
 
-<div class="p-10 bg-yellow-100">
+<div class="p-10 bg-yellow-100 flex">
     <h3 class="text-tertiary font-display font-bold text-5xl lg:text-6xl pb-8 ">Nyheder</h1>
-    <section>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-20 over">
+      <button class=ml-10>Se flere nyheder
+        <Button>
+          <div
+            id="arrow-right-logo"
+            class="w-[50px] h-[50px] ml-2 bg-[url('icons/arrow-right.svg')] hover:bg-[url('icons/arrow-right-hovered.svg')] bg-cover transition duration-400 ease-in-out hover:translate-x-2">
+          </div>
+        </Button>
+      </button>      
 
-        <!-- Nyhed 1 -->
+<div class="bg-yellow-100">
+<section class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-20 mx-10 pb-20">
+
+      <!-- Nyhed 1 -->
         <div class="col-span-1 group relative"> 
-          <div class="overflow-hidden">
+          <div class="relative overflow-hidden w-full h-64"> <!-- Fixed height -->
             <a href="" target="_blank">
-                <Image src={nyhed1} alt="50-års jubilæum som travtræner" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" />
-                <figcaption class="my-2 font-display text-sm">5. dec. 2024</figcaption>
+              <Image 
+                src={nyhed1} 
+                alt="50-års jubilæum som travtræner" 
+                class="w-full h-full object-cover transform transition-transform duration-1000 ease-in-out group-hover:scale-105"/>
             </a>
           </div>
           <a href="" target="_blank">
+            <figcaption class="my-2 font-display text-sm">5. dec. 2024</figcaption>
             <h2 class="text-2xl mb-2 font-display font-bold">50-års jubilæum som travtræner</h2>
-          <figcaption class="prose text-lg text-[#501e1f]">
-            Søndag rundede 74-årige Steen Juul en stor milepæl.
-        </figcaption>
-        </a>  
+            <figcaption class="prose text-lg text-[#501e1f]">
+              Søndag rundede 74-årige Steen Juul en stor milepæl.
+            </figcaption>
+          </a>
         </div>
 
         <!-- Nyhed 2 -->
         <div class="col-span-1 group relative"> 
-          <div class="overflow-hidden">
+          <div class="relative overflow-hidden w-full h-64"> <!-- Fixed height -->
             <a href="" target="_blank">
-                <Image src={nyhed2} alt="Galoptræner Bettina Andersen: ”Det kunne aldrig lade sig gøre uden opbakning hjemmefra.”" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" />
-                <figcaption class="my-2 font-display text-sm">26. nov. 2024</figcaption>
+              <Image 
+                src={nyhed2} 
+                alt="Galoptræner Bettina Andersen: ”Det kunne aldrig lade sig gøre uden opbakning hjemmefra." 
+                class="w-full h-full object-cover transform transition-transform duration-1000 ease-in-out group-hover:scale-105"/>
             </a>
           </div>
           <a href="" target="_blank">
-            <h2 class="text-2xl mb-2 font-display font-bold">Galoptræner Bettina Andersen: ”Det kunne aldrig lade sig gøre uden opbakning hjemmefra.”</h2>
-          <figcaption class="prose text-lg text-[#501e1f]">
-            Dansk Hestevæddeløb og Bet25 kårer My Fortunes sejr i Dansk St. Leger som Månedens Præstation i oktober.
-        </figcaption>
-        </a>  
+            <figcaption class="my-2 font-display text-sm">25. nov. 2024</figcaption>
+            <h2 class="text-2xl mb-2 font-display font-bold">Galoptræner Bettina Andersen: <br> ”Det kunne aldrig lade sig gøre uden opbakning hjemmefra."</h2>
+            <figcaption class="prose text-lg text-[#501e1f]">
+              Dansk Hestevæddeløb og Bet25 kårer My Fortunes sejr i Dansk St. Leger som Månedens Præstation i oktober.
+            </figcaption>
+          </a>
         </div>
 
         <!-- Nyhed 3 -->
         <div class="col-span-1 group relative"> 
-          <div class="overflow-hidden">
+          <div class="relative overflow-hidden w-full h-64"> <!-- Fixed height -->
             <a href="" target="_blank">
-                <Image src={nyhed3} alt="Galoptræner Bettina Andersen: ”Det kunne aldrig lade sig gøre uden opbakning hjemmefra.”" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-1000" />
-                <figcaption class="my-2 font-display text-sm">22. nov. 2024</figcaption>
+              <Image 
+                src={nyhed3} 
+                alt="GEmoji vender hjem til Fyens Væddeløbsbane" 
+                class="w-full h-full object-cover transform transition-transform duration-1000 ease-in-out group-hover:scale-105"/>
             </a>
           </div>
           <a href="" target="_blank">
-            <h2 class="text-2xl mb-2 font-display font-bold">Emoji vender hjem til Fyens Væddeløbsbane”</h2>
-          <figcaption class="prose text-lg text-[#501e1f]">
-            Der er løb der er særlige fordi de er store. Der er løb der er særlige fordi gode heste mødes. Og så er der løb der er særlige, fordi man vender hjem. Hjem til sin hjemmebane. Løbet i dag, har det hele for hingsten Emoji, der starter i Liga 1-finalen på Fyens Væddeløbsbane. 
-        </figcaption>
-        </a>  
-        </div>
-        
-      </div>      
-    </section>
+            <figcaption class="my-2 font-display text-sm">22. nov. 2024</figcaption>
+            <h2 class="text-2xl mb-2 font-display font-bold">Emoji vender hjem til Fyens Væddeløbsbane</h2>
+            <figcaption class="prose text-lg text-[#501e1f]">
+              Der er løb der er særlige fordi de er store. Der er løb der er særlige fordi gode heste mødes. Og så er der løb der er særlige, fordi man vender hjem. Hjem til sin hjemmebane. Løbet i dag, har det hele for hingsten Emoji, der starter i Liga 1-finalen på Fyens Væddeløbsbane. 
+            </figcaption>
+          </a>
+  <section/>
 </div>
 
 

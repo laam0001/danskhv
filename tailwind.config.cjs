@@ -68,6 +68,11 @@ module.exports = {
           "50%": { transform: "translateY(40px)" },
         },
 
+        hat: {
+          "0%": { transform: "translateX(-200%)" },
+          "100%": { transform: "translateX(300%)" },
+        },
+
         jump: {
           "0%": { transform: "translateY (-800px)" },
           "100%": { tranform: "translateY (800px)" },
@@ -92,6 +97,10 @@ module.exports = {
 
       animation: {
         walking: "walking 5s ease-in-out infinite",
+      },
+
+      animation: {
+        hat: "walking 5s ease-in-out infinite",
       },
 
       animation: {

@@ -92,16 +92,19 @@ function changeImage(){
 </section>
 
     <!-- Gradient overgang -->
-    <div class="h-screen lg:-mb-28 bg-gradient-to-b from-blue-100  to-brown-100"></div>
-
-<!--7. Hest nedefra -->
-<section id="section7" class="section7">
-     <Sektion7></Sektion7>
-</section>
+    <div class="h-96 lg:-mb-28 bg-gradient-to-b from-blue-100  to-red-100"></div>
 
 <!-- 8. Kvinde kaster hat med jubel -->
 <section id="section8" class="section8">
      <Sektion8></Sektion8>
+</section>
+
+    <!-- Gradient overgang -->
+    <div class="h-96 lg:-mb-28 bg-gradient-to-b from-red-100  to-brown-100 "></div>
+
+<!--7. Hest nedefra -->
+<section id="section7" class="section7">
+    <Sektion7></Sektion7>
 </section>
      
 </MainLayout>
@@ -216,20 +219,29 @@ baggrundslyd.onpause = function() {
     })
 
     inView( ".jumpinview", () =>{
-    animate( ".jump1", { x: [0, 0 ], y: [800, -1500 ] }, { duration: 7, delay: 2 }) 
+    animate( ".jump1", { x: [0, 0 ], y: [800, -1500 ] }, { duration: 4, delay: 2 }) 
     
 
     return () => {
-        animate( ".jump1", { x: [0, 0 ], y: [700, -1500 ] }, { duration: 7 })
+        animate( ".jump1", { x: [0, 0 ], y: [700, -1500 ] }, { duration: 4 })
     }
     })
 
     inView( ".jumpinview", () =>{
-    animate( ".jump2", { x: [0, 0 ], y: [800, -1500 ] }, { duration: 8, delay: 3 }) 
+    animate( ".jump2", { x: [0, 0 ], y: [800, -1500 ] }, { duration: 5, delay: 3 }) 
     
 
     return () => {
-        animate( ".jump2", { x: [0, 0 ], y: [700, -1500 ] }, { duration: 8 })
+        animate( ".jump2", { x: [0, 0 ], y: [700, -1500 ] }, { duration: 5 })
+    }
+    })
+
+    inView( ".hatinview", () =>{
+    animate( ".hat", { x: [-100, 100 ], y: [10, -15 ] }, { duration: 5, delay: 3 }) 
+    
+
+    return () => {
+        animate( ".hat", { x: [10, 40 ], y: [700, -1500 ] }, { duration: 5 })
     }
     })
 

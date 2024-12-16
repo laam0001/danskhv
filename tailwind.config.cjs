@@ -68,6 +68,11 @@ module.exports = {
           "50%": { transform: "translateY(40px)" },
         },
 
+        jump: {
+          "0%": { transform: "translateY (-800px)" },
+          "100%": { tranform: "translateY (800px)" },
+        },
+
         looking: {
           "0%": { transform: "translateX(0px)" },
           "50%": { transform: "translateY(15px)" },
@@ -75,18 +80,22 @@ module.exports = {
         },
 
         spinning: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(-50deg)' },
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-50deg)" },
         },
 
         riding: {
           "0%": { transform: "translate(-150%, -100%)" },
-          "100%": { transform: "translate(100px, 100px)" },        
-        }
+          "100%": { transform: "translate(100px, 100px)" },
+        },
       },
 
       animation: {
         walking: "walking 5s ease-in-out infinite",
+      },
+
+      animation: {
+        jump: "jump 10s ease-in-out infinite",
       },
 
       animation: {
@@ -100,7 +109,6 @@ module.exports = {
       animation: {
         riding: "riding 10s ease-in-out infinite",
       },
-
     },
   },
 };

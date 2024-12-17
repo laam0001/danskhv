@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import publikumMobile from "./public/publikum-mobil.webp";
+import publikum from "./public/publikum.webp";
+import publikumStorMobile from "./public/publikum-stor-mobil.webp";
+import publikumStor from "./public/publikum-stor.webp";
+import publikumBilletMobile from "./public/publikum-billet-mobil.webp";
+import publikumBillet from "./public/publikum-billet.webp";
+import billetMobile from "./public/billet-mobil.webp";
+import billet from "./public/billet.webp";
+import billetZoomMobile from "./public/billet-zoom-mobil.webp";
+import solidMobile from "./public/solid-mobil.webp";
+import hat from "./public/hat.svg";
+---
+
+
+<section class="overflow-clip bg-red-100">
+
+<!-- Mobil -->
+
+    <div id="horisontalscrollsection" class="h-[2000vw] lg:hidden">
+        <ul id="horisontalliste" class="list-none pl-0 flex sticky top-[0vh]">
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumMobile} class="w-full" alt="foto" />
+            <Image src={hat} alt="hat" class="absolute pb-80 hat animate-[hat_5s_ease-in-out_infinite]"></Image>
+         </li>
+
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
+
+        <li class="flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumStorMobile} class="w-full" alt="foto" /></li>
+
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
+
+        <li class="flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumBilletMobile} class="w-full" alt="foto" /></li>
+
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
+
+        <li class="flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto sticky"><Image src={billetMobile} class="w-full " alt="foto"/></li>
+
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
+
+
+        <li class="flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto sticky"><Image src={billetZoomMobile} class="w-full " alt="foto" />
+
+            <!-- Button -->
+            <div class="absolute inset-0 flex items-center justify-center z-30 top-[10%] lg:top-[20%]">
+                <a href="https://www.danskhv.dk/loebskalender/" class="font-sans mx-8 py-5 px-14 bg-green-400  text-green-100  text-center barlow-condensed-bold uppercase text-4xl justify-center rounded-md drop-shadow-md transition duration-400 ease-in-out">
+                Køb nu
+                </a>
+            </div>
+        </li>
+        </ul>
+    </div>
+
+    <!-- Desktop -->
+
+    <div id="horisontalscrollsectiondesktop" class="h-[1000vw] hidden lg:block">
+        <ul id="horisontallistedesktop" class="list-none pl-0 flex sticky top-[0vh]">
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikum} class="w-full" alt="foto" />
+            <Image src={hat} alt="hat" class="absolute pb-80 hat animate-[hat_5s_ease-in-out_infinite]"></Image>
+         </li>
+
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
+
+        <li class="flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumStor} class="w-full" alt="foto" /></li>
+
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
+
+        <li class="flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumBillet} class="w-full" alt="foto" /></li>
+
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
+
+        <li class="flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto sticky"><Image src={billet} class="w-full " alt="foto"/>
+
+            <!-- Button -->
+            <div class="absolute inset-0 flex items-center justify-center z-30 top-[10%] lg:top-[0%]">
+                <a href="https://www.danskhv.dk/loebskalender/" class="font-sans mx-8 py-5 px-14 bg-green-400 hover:bg-red-400 text-green-100 hover:text-red-100 text-center barlow-condensed-bold uppercase text-4xl lg:text-4xl justify-center rounded-md drop-shadow-md transition duration-400 ease-in-out">
+                Køb nu
+                </a>
+            </div>
+
+        </li>
+
+        </ul>
+    </div>
+
+</section>
+
+
+
+<script>
+     import { animate, scroll } from "motion";
+
+    /* Horisontal scroll sektion */
+	scroll(
+	animate("#horisontalliste", {
+		transform: ["none", "translateX(-800vw)"]
+	}),
+	{ target: document.querySelector("#horisontalscrollsection") }
+	); 
+
+     /* Horisontal scroll sektion */
+	scroll(
+	animate("#horisontallistedesktop", {
+		transform: ["none", "translateX(-600vw)"]
+	}),
+	{ target: document.querySelector("#horisontalscrollsectiondesktop") }
+	); 
+	
+</script>
+	

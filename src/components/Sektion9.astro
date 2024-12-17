@@ -5,25 +5,25 @@ import publikumMobile from "./public/publikum-mobil.webp";
 import publikumStorMobile from "./public/publikum-stor-mobil.webp";
 import publikumBilletMobile from "./public/publikum-billet-mobil.webp";
 import billetMobile from "./public/billet-mobil.webp";
+import billetZoomMobile from "./public/billet-zoom-mobil.webp";
 ---
 
 
 <div class="overflow-clip bg-red-100">
-    <section id="horisontalscrollsection" class="h-[1800vw]">
+    <section id="horisontalscrollsection" class="h-[2000vw]">
         <ul id="horisontalliste" class="list-none pl-0 flex sticky top-[0vh]">
-        <li class="pl-0 flex w-full h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumMobile} class="w-full" alt="foto" /></li>
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumMobile} class="w-full" alt="foto" /></li>
 
-        <li class="ml-96 flex w-full h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumStorMobile} class="w-full" alt="foto" /></li>
+        <li class="ml-96 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumStorMobile} class="w-full" alt="foto" /></li>
 
-        <li class="ml-96 flex w-full h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumBilletMobile} class="w-full" alt="foto" /></li>
+        <li class="ml-96 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumBilletMobile} class="w-full" alt="foto" /></li>
 
-        <li class="ml-[90px] flex w-full h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto sticky"></figure><Image src={billetMobile} class="w-full " alt="foto" /></li>
+        <li class="ml-96 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto sticky"><Image src={billetMobile} class="w-full " alt="foto"/></li>
+
+        <li class="ml-[90px] flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto sticky"><Image src={billetZoomMobile} class="w-full " alt="foto" /></li>
         </ul>
 
-        <div class="fadeimages h-screen lg:w-screen">
-            <Image class="h-screen fadetopimg object-cover z-10" src={venner}  alt="venner holder om hinanden"></Image>
-        </div>
-        
+
     </section>
 </div>
 

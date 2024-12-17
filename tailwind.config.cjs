@@ -94,7 +94,6 @@ module.exports = {
           "0%": { transform: "translate(-150%, -100%)" },
           "100%": { transform: "translate(100px, 100px)" },
         },
-      },
 
       animation: {
         walking: "walking 5s ease-in-out infinite",
@@ -119,6 +118,8 @@ module.exports = {
       animation: {
         riding: "riding 10s ease-in-out infinite",
       },
+
+      }
     },
   },
 };

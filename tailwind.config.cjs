@@ -76,7 +76,7 @@ module.exports = {
 
         jump: {
           "0%": { transform: "translateY (-800px)" },
-          "100%": { tranform: "translateY (800px)" },
+          "100%": { transform: "translateY (800px)" },
         },
 
         looking: {
@@ -99,35 +99,34 @@ module.exports = {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
-      animation: {
-        walking: "walking 5s ease-in-out infinite",
-      },
-
-      animation: {
-        hat: "walking 5s ease-in-out infinite",
-      },
-
-      animation: {
-        jump: "jump 10s ease-in-out infinite",
-      },
-
-      animation: {
-        looking: "looking 5s ease-in-out",
-      },
-
-      animation: {
-        spinning: "spinning 5s ease-in-out infinite",
-      },
-
-      animation: {
-        riding: "riding 10s ease-in-out infinite",
-      },
-
-      animation: {
-        fadeIn: "fadeIn 2s ease-in-out infinite",
+        animation: {
+          walking: "walking 5s ease-in-out infinite",
         },
 
-      }
+        animation: {
+          hat: "walking 5s ease-in-out infinite",
+        },
+
+        animation: {
+          jump: "jump 10s ease-in-out infinite",
+        },
+
+        animation: {
+          looking: "looking 5s ease-in-out",
+        },
+
+        animation: {
+          spinning: "spinning 5s ease-in-out infinite",
+        },
+
+        animation: {
+          riding: "riding 10s ease-in-out infinite",
+        },
+
+        animation: {
+          fadeIn: "fadeIn 2s ease-in-out infinite",
+        },
+      },
     },
   },
 };

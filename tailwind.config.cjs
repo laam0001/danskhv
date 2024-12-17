@@ -95,6 +95,10 @@ module.exports = {
           "100%": { transform: "translate(100px, 100px)" },
         },
 
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
       animation: {
         walking: "walking 5s ease-in-out infinite",
       },
@@ -118,6 +122,10 @@ module.exports = {
       animation: {
         riding: "riding 10s ease-in-out infinite",
       },
+
+      animation: {
+        fadeIn: "fadeIn 2s ease-in-out infinite",
+        },
 
       }
     },

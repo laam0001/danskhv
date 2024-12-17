@@ -7,13 +7,18 @@ import publikumBilletMobile from "./public/publikum-billet-mobil.webp";
 import billetMobile from "./public/billet-mobil.webp";
 import billetZoomMobile from "./public/billet-zoom-mobil.webp";
 import solidMobile from "./public/solid-mobil.webp";
+import hat from "./public/hat.svg";
 ---
 
 
 <div class="overflow-clip bg-red-100">
-    <section id="horisontalscrollsection" class="h-[2000vw]">
+    <section>
+
+    <div id="horisontalscrollsection" class="h-[2000vw]">
         <ul id="horisontalliste" class="list-none pl-0 flex sticky top-[0vh]">
-        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumMobile} class="w-full" alt="foto" /></li>
+        <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={publikumMobile} class="w-full" alt="foto" />
+            <Image src={hat} alt="hat" class="absolute pb-80 hat"></Image>
+         </li>
 
         <li class="pl-0 flex w-[100vw] h-screen items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"><Image src={solidMobile} class="w-full" alt="foto" /></li>
 
@@ -40,7 +45,7 @@ import solidMobile from "./public/solid-mobil.webp";
             </div>
         </li>
         </ul>
-
+    </div>
 
     </section>
 </div>

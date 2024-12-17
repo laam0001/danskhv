@@ -1,22 +1,36 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import { Image } from "astro:assets";
-import phone from "/public/phones.svg";
 ---
 
-<MainLayout title="Intro | Dansk Hestevæddeløb">  
-
-<section class="h-screen bg-green-100">
+<MainLayout title="Intro | Dansk Hestevæddeløb">
+  <section class="h-screen bg-[url('/intro-baggrund.png')] bg-cover bg-center animate-zoomIn border-b border-2 border-green-400">
     <a href="/scrollytelling">
-        <div class="flex justify-center items-center">
-            <Image src={phone} alt="Høretelfoner" class="mt-48 mx-4"></Image>
-        </div>
+      <div class="flex justify-center items-center">
+        <img id="Høretelefoner" src="/public/phones.svg" class="mt-48 mx-4 transition duration-1000 ease-in-out hover:scale-105" alt="høretelefoner">
+      </div>
     </a>
     
-        <p class="text-center text-green-400 font-sans font-bold text-xl mx-5 mt-10">For den bedste visnings- og lydoplevelse <br>  sæt dine høretelefoner i.</p>
-        <p class="text-center text-green-400 font-sans  text-xl mx-5 pt-4"> Klar? <br> Klik på høretelefonerne for at starte!</p>
+    <p class="text-center text-green-400 text-2xl font-display font-bold mx-5 mt-10">For den bedste visnings- og lydoplevelse <br> sæt dine høretelefoner i.</p>
+    <p class="text-center text-green-400 font-sans text-xl mx-5 pt-8">Er du klar? <br> Klik på høretelefonerne eller på knappen <br> for at starte!</p>
+
+    <!-- Button -->
+    <div class="relative inset-0 flex items-center justify-center z-30 py-10">
+      <a href="/scrollytelling" class="font-sans mx-8 py-5 px-14 bg-green-400 hover:bg-red-400 text-white-100 hover:text-white-100 text-center barlow-condensed-bold uppercase text-4xl lg:text-4xl justify-center rounded-md drop-shadow-md transition duration-400 ease-in-out">Klar!</a>
     </div>
-
-
-</section>  
+  </section>
 </MainLayout>
+
+<style>
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-zoomIn {
+    animation: zoomIn 7s ease-out forwards;
+  }
+</style>

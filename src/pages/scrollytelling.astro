@@ -1,10 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import { Image } from "astro:assets";
-import soundOn from "../assets/images/sound-on.webp";
-import heroImg from "../assets/images/bg-hero.webp";
-import heroDesktop from "../assets/images/hero-desktop.webp";
 
 import Sektion1 from "../components/Sektion1.astro";
 import Sektion2 from "../components/Sektion2.astro";
@@ -14,123 +9,95 @@ import Sektion5 from "../components/Sektion5.astro";
 import Sektion6 from "../components/Sektion6.astro";
 import Sektion7 from "../components/Sektion7.astro";
 import Sektion8 from "../components/Sektion8.astro";
-
-function changeImage(){
-  document.getElementById("audio-global-mute").style.visibility = 'hidden';
-  document.getElementById("audio-global").style.visibility = 'visible';
-} 
 ---
 
 <MainLayout title="DHV – Historisk Fællesskab | Kampagne">
 
-<!-- Progress-bar i bunden -->
-<div class="progress-bar h-4 fixed w-full bg-red-400 left-0 origin-top-left bottom-0 right-0 z-[9999]"></div>
+        <!-- Knap -->
+        <section id="section1" class="section1 relative">
+            <div class="bg-green-100 py-0">
+                <!-- Lyd on -->
+                <div id="audio-global" class="flex justify-end pt-[70px]">
+                    <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" id="audio-global-button">
+                </div>
 
-<!-- 1. Hero -->
-<section id="section1" class="section1 relative">
-    <div class="bg-green-100 py-0">
-        <!-- Lyd on -->
-        <div id="audio-global" class="flex justify-end mt-4">
-            <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" id="audio-global-button">
-        </div>
 
-<!-- Pil ned -->
-<button>
-    <Button>
-        <div
-            id="arrow-down"
-            class="floating-arrow absolute top-[20%] left-1/2 transform -translate-x-1/2 z-20 animate-[walking_5s_ease-in-out_infinite]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#004228]" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M10 18a1 1 0 01-.707-.293l-7-7a1 1 0 011.414-1.414L10 15.586l6.293-6.293a1 1 0 011.414 1.414l-7 7A1 1 0 0110 18z" clip-rule="evenodd" />
-            </svg>
-        </div>
-    </Button>
-</button>
-        
-        
-        <!-- Titel -->
-        <h1 class="px-4 text-5xl lg:text-7xl mt-36 mx-4 lg:-mt-14 lg:text-center text-green-400 font-display font-bold absolute z-0 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-1/3">
-            Fællesskabet venter...
-        </h1>
+        <!-- Progress-bar i bunden -->
+        <div class="progress-bar h-4 fixed w-full bg-red-400 left-0 origin-top-left bottom-0 right-0 z-[9999]"></div>
 
-        <!-- Billede for mobil og tablet -->
-        <Image class="lg:hidden w-full h-auto mt-52" src={heroImg} alt="publikum med hatte på" />
 
-        <!-- Billede for desktop -->
-        <div class="relative w-full h-auto lg:block hidden">
-            <Image class="w-full h-auto" src={heroDesktop} alt="publikum med hatte på" />
+        <!-- 1. Hero sektion -->
+        <section id="section1" class="section1">
+            <Sektion1></Sektion1>
+        </section>
 
-            <!-- Desktop animationen -->
-            <div class="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-                <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 50vw; height: auto;" id="hest" loop autoplay></dotlottie-player>
-            </div>
-        </div>
-        
-    </div>
-</section>
+            <!-- Gradient overgang -->
+            <div class="h-64 lg:-mb-28 bg-gradient-to-b from-green-100  to-red-100 lg:from-[#c9d5a3] lg:to-red-100 lg:h-96"></div>
 
- <!-- Gradient overgang -->
-        <div class="h-64 lg:-mb-28 bg-gradient-to-b from-green-100  to-red-100 lg:from-[#c9d5a3] lg:to-red-100 lg:h-96"></div>
+        <!-- 2. Dronning sektion -->
+        <section id="section2" class="section2">
+            <Sektion2></Sektion2>
+        </section>
 
-<!-- 2. Dronning sektion -->
-<section id="section2" class="section2">
-    <Sektion2></Sektion2>
-</section>
+        <!-- 3. Krig og forræderi -->
+        <section id="section3" class="section3">
+            <Sektion3></Sektion3>
+        </section>
 
-<!-- 3. Krig og forræderi -->
-<section id="section3" class="section3">
-    <Sektion3></Sektion3>
-</section>
+            <!-- Gradient overgang -->
+            <div class="h-72 lg:h-screen bg-gradient-to-b from-[#7c3846] to-brown-100"></div>
 
-     <!-- Gradient overgang -->
-     <div class="h-72 lg:h-screen bg-gradient-to-b from-[#7c3846] to-brown-100"></div>
+        <!-- 4. 1954 -->
+        <section id="section4" class="section4">
+            <Sektion4></Sektion4>
+        </section>
 
-<!-- 4. 1954 -->
-<section id="section4" class="section4">
-     <Sektion4></Sektion4>
-</section>
+        <!-- 5. Røgsky - Spændingsmusik -->
+        <section id="section5" class="section5">
+            <Sektion5></Sektion5>
+        </section>
 
-<!-- 5. Røgsky - Spændingsmusik -->
-<section id="section5" class="section5">
-     <Sektion5></Sektion5>
-</section>
+        <!-- 6. Gallop afslutning -->
+        <section id="section6" class="section6" >
+            <Sektion6></Sektion6>
+        </section>
 
-<!-- 6. Gallop afslutning -->
-<section id="section6" class="section6" >
-     <Sektion6></Sektion6>
-</section>
+            <!-- Gradient overgang -->
+            <div class="h-96 lg:-mb-28 bg-gradient-to-b from-blue-100  to-red-100"></div>
 
-    <!-- Gradient overgang -->
-    <div class="h-96 lg:-mb-28 bg-gradient-to-b from-blue-100  to-red-100"></div>
+        <!-- 8. Kvinde kaster hat med jubel -->
+        <section id="section8" class="section8">
+            <Sektion8></Sektion8>
+        </section>
 
-<!-- 8. Kvinde kaster hat med jubel -->
-<section id="section8" class="section8">
-     <Sektion8></Sektion8>
-</section>
+            <!-- Gradient overgang -->
+            <div class="h-96 lg:-mb-28 bg-gradient-to-b from-red-100  to-brown-100 "></div>
 
-    <!-- Gradient overgang -->
-    <div class="h-96 lg:-mb-28 bg-gradient-to-b from-red-100  to-brown-100 "></div>
-
-<!--7. Hest nedefra -->
-<section id="section7" class="section7">
-    <Sektion7></Sektion7>
-</section>
+        <!--7. Hest nedefra -->
+        <section id="section7" class="section7">
+            <Sektion7></Sektion7>
+        </section>
      
 </MainLayout>
 
 
 <script>
+function changeImage(){
+  document.getElementById("audio-global-mute").style.visibility = 'hidden';
+  document.getElementById("audio-global").style.visibility = 'visible';
+} 
 
-// Pil til scroll
+// Klik pil ned på stor samt lille skærm 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("arrow-down").addEventListener("click", function() {
-      window.scrollBy({
-        top: window.innerHeight * 2,
-        behavior: "smooth"
-      });
+  document.getElementById("arrow-down").addEventListener("click", function() {
+    const isSmallScreen = window.innerWidth <= 768; // Example: 768px or less for small screens
+
+    window.scrollBy({
+      top: isSmallScreen ? window.innerHeight : window.innerHeight * 2,
+      behavior: "smooth"
     });
   });
+});
 
 import { animate, inView, scroll } from "motion";
 

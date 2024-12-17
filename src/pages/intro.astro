@@ -1,12 +1,22 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import phone from "./public/phones.svg";
 ---
 
-<section class="bg-">
+<MainLayout title="Intro | Dansk Hestevæddeløb">  
+
+<section class="h-screen bg-green-100">
+
+    <div class="flex">
+        <Image src={phone} alt="Høretelfoner" class="pt-48 mx-4"></Image>
+    </div>
+
 <!-- Button -->
 <div class="absolute inset-0 flex items-center justify-center z-30 top-[40%] lg:top-[20%]">
-    <a href="/intro" class="font-sans mx-8 py-5 px-14 bg-red-200 hover:bg-red-400 text-text-header hover:text-[#FBDED3] text-center barlow-condensed-bold uppercase text-2xl lg:text-3xl justify-center rounded-md drop-shadow-md transition duration-400 ease-in-out">
+    <a href="/scrollytelling" class="font-sans mx-8 py-5 px-14 bg-red-200 hover:bg-red-400 text-text-header hover:text-[#FBDED3] text-center barlow-condensed-bold uppercase text-2xl lg:text-3xl justify-center rounded-md drop-shadow-md transition duration-400 ease-in-out">
         Se kampagne
     </a>
 </div>
-</section>
+</section>  
+</MainLayout>

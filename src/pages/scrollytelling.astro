@@ -23,6 +23,9 @@ function changeImage(){
 
 <MainLayout title="DHV – Historisk Fællesskab | Kampagne">
 
+<!-- Progress-bar placeret i toppen af sitet -->
+<div class="progress-bar h-4 fixed w-full bg-red-400 left-0 origin-top-left bottom-0 right-0 z-[9999]"></div>
+
 <!-- 1. Hero -->
 <section id="section1" class="section1">
     <div class="bg-green-100 py-0">
@@ -142,6 +145,7 @@ baggrundslyd.onpause = function() {
     baggrundslydknap.src = '/sound-off.webp';
 };
 
+    scroll( animate(".progress-bar", { scaleX: [0, 1] }));
 
     inView( ".section1", () =>{
         console.log("section1");

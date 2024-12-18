@@ -8,10 +8,11 @@ import headset from "../assets/images/phones.svg";
   <section class="relative h-screen overflow-hidden">
     <div class="absolute inset-0 bg-green-50 bg-[url('/intro-baggrund.webp')] bg-cover bg-center animate-zoomIn">
       <a href="#section1">
-        <div class="flex justify-center items-center lg:-mt-10">
-          <Image class="mt-48 mx-4 transition duration-1000 ease-in-out hover:scale-105" src={headset} alt="Påfør høretelefoner" />
+        <div id="audio-global" class="flex justify-end pt-[70px]">
+          <Image class="mt-48 mx-4 transition duration-1000 ease-in-out hover:scale-105" loading="lazy" src={headset} alt="Påfør høretelefoner" id="audio-global-button" />
         </div>
       </a>
+
   
       <p class="text-center text-green-400 text-2xl font-display font-bold mx-5 mt-10">
         For den bedste visnings- og lydoplevelse <br> sæt dine høretelefoner i.

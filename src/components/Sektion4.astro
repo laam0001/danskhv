@@ -7,18 +7,18 @@ import glas from "../assets/images/glas.webp";
 
 <div class="bg-brown-100">
 
-    <div class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0" style="background-image: url('/mennesker.webp')" >
+    <div class="flex items-center h-screen w-full bg-cover bg-center sticky top-0" style="background-image: url('/mennesker.webp')" >
         <p class="mx-10 lg:w-1/4 lg:ml-64 p-10 bg-black-100/70 text-white-100 text-[18px] stickyparallax1">Vi befinder os nu i år 1954. Der er gået næsten 180 år. Tiden har talt, og hestevæddeløb har fået et fast greb om det danske folk.</p>
     </div>
 
-    <div class="h-screen bg-brown-100 flex items-center w-100 bg-cover bg-center sticky top-0">
-        <div class="flex items-center h-screen w-100 lg:w-full bg-cover bg-center sticky top-0 look1 animate-[looking_5s_ease-in-out_infinite]" style="background-image: url('/folk.svg')" >
+    <div class="h-screen bg-brown-100 flex items-center w-full bg-cover bg-center sticky top-0">
+        <div class="flex items-center h-screen w-full lg:w-full bg-cover bg-center sticky top-0 look1 animate-[looking_5s_ease-in-out_infinite]" style="background-image: url('/folk.svg')" >
         <p class="mx-10 mt-24 lg:w-1/4 lg:ml-64 p-10 bg-black-100/70 text-white-100  text-[18px] stickyparallax1">Kig omkring dig. Hver en person er her for én ting: at være en del af noget stort, noget magisk.</p>
     </div>
     </div>
 
-<div class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0" style="background-image: url('/Baggrund-venner.webp')" >
-    <p class="mx-10 lg:w-1/4 lg:ml-64 p-10 bg-black-100/60 text-white-100 text-[18px] stickyparallax1"> Folk er her ikke kun for hestevæddeløb... de er her for fællesskabet!</p>
+<div class="flex items-center h-screen w-full bg-cover bg-center sticky top-0" style="background-image: url('/Baggrund-venner.webp')" >
+    <p class="mx-10 lg:w-1/4 lg:ml-64 p-10 bg-black-100/70 text-white-100 text-[18px] stickyparallax1 transform-gpu will-change-transform">Vi befinder os nu i år 1954...</p>
 </div>
 
 
@@ -63,50 +63,59 @@ import glas from "../assets/images/glas.webp";
 </div>
 
 <script>
-    import { animate, inView, scroll } from "motion";
+    import { animate, scroll } from "motion";
 
-    /* Sticky parallax scrolling */
-
-    scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
-		target: document.querySelector(".stickyparallax1"),
-	});
-
-     /* Scroll scrubber - Mobil */
-     const scrubbervideoMobile = document.querySelector("#videofil-mobil");
-    scrubbervideoMobile.pause();    
-    scroll(
-        ({ y }) => {
-        if (!scrubbervideoMobile.readyState) return;
-        scrubbervideoMobile.currentTime = scrubbervideoMobile.duration * y.progress;
-        },
-        {
-        target: document.querySelector(".videoscroller"),
-        offset: ["start end", "end end"]
-        }
-    );
-
-
-    /* Scroll scrubber - Desktop */
-    const scrubbervideoDesktop = document.querySelector("#videofil-desktop");
-    scrubbervideo.pause();  
-    scroll(
-        ({ y }) => {
-        if (!scrubbervideoDesktop.readyState) return;
-        scrubbervideoDesktop.currentTime = scrubbervideoDesktop.duration * y.progress;
-        },
-        {
-        target: document.querySelector(".videoscrollerdesktop"),
-        offset: ["start end", "end end"]
-        }
-    );
-
-    /* Crossfade to billeder */
-    scroll(
-    animate(".fadebottomimg", {
-        opacity: [1, 0]
-    }), {
-        target: document.querySelector(".fadeimages"),
-        offset: ["25vh", "-2vh"]
+/* Sticky parallax scrolling */
+scroll(
+    animate(".stickyparallax1", {
+        y: [-200, 0], // Juster for den ønskede parallax-effekt
+    }),
+    {
+        target: document.querySelector(".stickyparallax1"),
     }
+);
+
+/* Scroll scrubber - Mobil */
+const scrubbervideoMobile = document.querySelector("#videofil-mobil");
+if (scrubbervideoMobile) {
+    scrubbervideoMobile.pause();
+    scroll(
+        ({ y }) => {
+            if (!scrubbervideoMobile.readyState) return;
+            scrubbervideoMobile.currentTime = scrubbervideoMobile.duration * y.progress;
+        },
+        {
+            target: document.querySelector(".videoscroller"),
+            offset: ["start end", "end end"],
+        }
     );
+}
+
+/* Scroll scrubber - Desktop */
+const scrubbervideoDesktop = document.querySelector("#videofil-desktop");
+if (scrubbervideoDesktop) {
+    scrubbervideoDesktop.pause();
+    scroll(
+        ({ y }) => {
+            if (!scrubbervideoDesktop.readyState) return;
+            scrubbervideoDesktop.currentTime = scrubbervideoDesktop.duration * y.progress;
+        },
+        {
+            target: document.querySelector(".videoscrollerdesktop"),
+            offset: ["start end", "end end"],
+        }
+    );
+}
+
+/* Crossfade to billeder */
+scroll(
+    animate(".fadebottomimg", {
+        opacity: [1, 0], // Fade out
+    }),
+    {
+        target: document.querySelector(".fadeimages"),
+        offset: ["25vh", "-2vh"], // Adjust the offset based on your needs
+    }
+);
+
 </script>

@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Lydknap funktionalitet
 const baggrundslydknap = document.getElementById("audio-global-button");
-var baggrundslyd = new Audio('https://lna-mediedesign.dk/sound-dronning.mp3');
+var baggrundslyd = new Audio('https://idahallback-multimedieeksamen.netlify.app/introduktion-musik.m4a');
 var afspillerlyd = false;
 
 // Toggle play/pause when the button is clicked
@@ -330,6 +330,14 @@ baggrundslyd.onpause = function() {
 
 
     scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+
+    inView( ".intro", () =>{
+        console.log("intro");
+        baggrundslyd.src="https://idahallback-multimedieeksamen.netlify.app/introduktion-musik.m4a";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
 
     inView( ".section1", () =>{
         console.log("section1");
@@ -373,19 +381,19 @@ baggrundslyd.onpause = function() {
 
     inView( ".section8", () =>{
         console.log("section8");
-        baggrundslyd.src="https://lna-mediedesign.dk/hat.mp3";
+        baggrundslyd.src="https://idahallback-multimedieeksamen.netlify.app/afsluttende-musik.m4a";
         if (afspillerlyd) {
             baggrundslyd.play();
         }
     });
 
-    inView( ".section9", () =>{
-        console.log("section9");
-        baggrundslyd.src="https://lna-mediedesign.dk/publikum.mp3";
-        if (afspillerlyd) {
-            baggrundslyd.play();
-        }
-    });
+    // inView( ".section9", () =>{
+    //     console.log("section9");
+    //     baggrundslyd.src="https://idahallback-multimedieeksamen.netlify.app/afsluttende-musik.m4a";
+    //     if (afspillerlyd) {
+    //         baggrundslyd.play();
+    //     }
+    // });
 
 
     inView( ".walkinview", () =>{

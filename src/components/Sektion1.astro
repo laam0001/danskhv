@@ -62,4 +62,16 @@ import phone from "/public/phones.svg";
             title.classList.remove("opacity-100");
         }
     });
+
+    // Klik pil ned på stor samt lille skærm 
+    document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("arrow-down").addEventListener("click", function() {
+    const isSmallScreen = window.innerWidth <= 768; // Example: 768px or less for small screens
+
+    window.scrollBy({
+      top: isSmallScreen ? window.innerHeight : window.innerHeight * 2,
+      behavior: "smooth"
+    });
+  });
+});
 </script>

@@ -4,7 +4,7 @@
 
 <!-- Ny kode -->
 
-<section id="section4" class="bg-red-100 pt-10 lg:-mt-[800px]">
+<div class="bg-red-100 pt-10 lg:-mt-[800px]">
 
   <!-- Mobil video -->
   <div class="lg:hidden videocontainer sticky top-[10%] w-full h-screen">
@@ -46,39 +46,38 @@
   </div>
   <div class="h-[80vh]"></div>
 
-</section>
+</div>
 
 <script>
   import { scroll } from "motion"; 
   
   /* Scroll scrubber - Mobil */
-const scrubbervideomobil = document.querySelector("#videofil-mobil3");
-scrubbervideomobil.pause(); 
-scroll(
-  ({ y }) => {
-  if (!scrubbervideomobil.readyState) return;
-  scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
-  },
-  {
-  target: document.querySelector(".videoscroller3"),
-  offset: ["start end", "end start"]
-  }
-);
+  const scrubbervideomobil = document.querySelector("#videofil-mobil3");
+  scrubbervideomobil.pause(); 
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideomobil.readyState) return;
+    scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscroller3"),
+    offset: ["start end", "end start"]
+    }
+  );
 
 
   /* Scroll scrubber - Desktop */
-const scrubbervideodesktop = document.querySelector("#videofil-desktop3");
-scrubbervideodesktop.pause(); 
-scroll(
-  ({ y }) => {
-  if (!scrubbervideodesktop.readyState) return;
-  scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
-  },
-  {
-  target: document.querySelector(".videoscrollerdesktop3"),
-  offset: ["start end", "end start"]
-  }
-);
-
+  const scrubbervideodesktop = document.querySelector("#videofil-desktop3");
+  scrubbervideodesktop.pause(); 
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideodesktop.readyState) return;
+    scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscrollerdesktop3"),
+    offset: ["start end", "end start"]
+    }
+  );
 </script>
  

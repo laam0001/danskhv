@@ -5,6 +5,7 @@ import heroDesktop from "../assets/images/hero-desktop.webp";
 import heroImg from "../assets/images/bg-hero.webp";
 import Button from '../components/Button.astro';
 
+import Introduktion from "../components/Introduktion.astro";
 import Sektion1 from "../components/Sektion1.astro";
 import Sektion2 from "../components/Sektion2.astro";
 import Sektion3 from "../components/Sektion3.astro";
@@ -22,6 +23,10 @@ function changeImage(){
 ---
 
 <MainLayout title="DHV – Historisk Fællesskab | Kampagne">
+
+<section id="introduktion" class="introduktion">
+    <Introduktion></Introduktion>
+</section>
 
 <!-- 1. Hero sektion -->
 <section id="section1" class="section1">

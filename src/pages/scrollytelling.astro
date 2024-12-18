@@ -16,6 +16,7 @@ import Sektion7 from "../components/Sektion7.astro";
 import Sektion8 from "../components/Sektion8.astro";
 import Sektion9 from "../components/Sektion9.astro";
 import phone from "/public/phones.svg";
+import SoundFooter from "../components/SoundFooter.astro";
 
 function changeImage(){
   document.getElementById("audio-global-mute").style.visibility = 'hidden';
@@ -34,7 +35,7 @@ function changeImage(){
 <!-- Lyd på for en bedre oplevelse -->
 <section class="h-screen bg-green-100">
         <div id="audio-global" class="cursor-pointer flex justify-center items-center">
-            <Image src={phone} alt="Lyd" loading="lazy" class="w-full mt-48 mx-4 cursor-pointer" id="audio-global-button" >
+            <Image src={phone} alt="Lyd" loading="lazy" class="w-full mt-72 lg:w-[500px] lg:mt-52 mx-4 cursor-pointer" id="audio-global-button" >
         </div>  
     
         <p class="text-center text-green-400 font-sans font-bold text-xl mx-5 mt-10">For den bedste visnings- og lydoplevelse <br>  sæt dine høretelefoner i.</p>
@@ -289,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Scroll to section 1
         window.scrollBy({
-            top: isSmallScreen ? window.innerHeight : window.innerHeight * 2,
+            top: isSmallScreen ? window.innerHeight : window.innerHeight * 1,
             behavior: "smooth"
         });
 

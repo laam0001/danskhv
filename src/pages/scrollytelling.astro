@@ -95,6 +95,40 @@ function changeImage(){
     <Sektion7></Sektion7>
 </section>
 
+<script>
+    import { scroll } from "motion"; 
+    
+    /* Scroll scrubber - Mobil */
+  const scrubbervideomobil = document.querySelector("#videofil-mobil4");
+  scrubbervideomobil.pause();	
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideomobil.readyState) return;
+    scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscroller4"),
+    offset: ["start end", "end start"]
+    }
+  );
+  
+  
+    /* Scroll scrubber - Desktop */
+  const scrubbervideodesktop = document.querySelector("#videofil-desktop4");
+  scrubbervideodesktop.pause();	
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideodesktop.readyState) return;
+    scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscrollerdesktop4"),
+    offset: ["start end", "end start"]
+    }
+  );
+  
+  </script>
+
     <!-- Gradient overgang -->
     <div class="h-96 lg:-mb-28 bg-gradient-to-b from-brown-100  to-red-100 "></div>
 

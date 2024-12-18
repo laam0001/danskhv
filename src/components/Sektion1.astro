@@ -23,7 +23,7 @@ import heroDesktop from "../assets/images/hero-desktop.webp";
 
 
     <!-- Titel -->
-    <h1 class="animate-[fadeIn_8s_ease-in-out] px-4 text-5xl lg:text-7xl mt-36 mx-4 lg:-mt-14 lg:text-center text-green-400 font-display font-bold absolute z-20 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-[22%]">
+    <h1 id="fadeInTitle" class="opacity-0 transition-opacity duration-1000 ease-in-out px-4 text-5xl lg:text-7xl mt-36 mx-4 lg:-mt-14 lg:text-center text-green-400 font-display font-bold absolute z-20 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:top-[16%]">
         Fællesskabet venter...
     </h1>
             
@@ -49,3 +49,15 @@ import heroDesktop from "../assets/images/hero-desktop.webp";
 </div>
 
 </section>
+
+<script>
+    import { animate, inView, scroll } from "motion";
+    inView("#fadeInTitle", (inView) => {
+        const title = document.getElementById("fadeInTitle");
+        if (inView) {
+            title.classList.add("opacity-100");
+        } else {
+            title.classList.remove("opacity-100");
+        }
+    });
+</script>

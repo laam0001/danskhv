@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 import { animate, inView, scroll } from "motion";
 
 const baggrundslydknap = document.getElementById("audio-global-button");
-var baggrundslyd = new Audio('https://lna-mediedesign.dk/sound-dronning.mp3');
+var baggrundslyd = new Audio('');
 var afspillerlyd = false;
 
 // Toggle play/pause when the button is clicked
@@ -141,6 +141,14 @@ baggrundslyd.onpause = function() {
 };
 
     scroll( animate(".progress-bar", { scaleX: [0, 1] }));
+
+    inView( ".intro", () =>{
+        console.log("intro");
+        baggrundslyd.src="https://lna-mediedesign.dk/section3.mp3";
+        if (afspillerlyd) {
+            baggrundslyd.play();
+        }
+    });
 
     inView( ".section1", () =>{
         console.log("section1");

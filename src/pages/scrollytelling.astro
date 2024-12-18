@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function() {
 import { animate, inView, scroll } from "motion";
 
 const baggrundslydknap = document.getElementById("audio-global-button");
-var baggrundslyd = new Audio('');
+var baggrundslyd = new Audio('https://idahallback-multimedieeksamen.netlify.app/introduktion-musik.m4a');
 var afspillerlyd = false;
 
 // Toggle play/pause when the button is clicked
@@ -144,7 +144,7 @@ baggrundslyd.onpause = function() {
 
     inView( ".intro", () =>{
         console.log("intro");
-        baggrundslyd.src="https://lna-mediedesign.dk/section3.mp3";
+        baggrundslyd.src="https://idahallback-multimedieeksamen.netlify.app/introduktion-musik.m4a";
         if (afspillerlyd) {
             baggrundslyd.play();
         }
@@ -198,9 +198,9 @@ baggrundslyd.onpause = function() {
         }
     });
 
-    inView( ".section9", () =>{
+    inView( ".section8,.section9", () =>{
         console.log("section9");
-        baggrundslyd.src="https://lna-mediedesign.dk/publikum.mp3";
+        baggrundslyd.src="https://idahallback-multimedieeksamen.netlify.app/afsluttende-musik.m4a";
         if (afspillerlyd) {
             baggrundslyd.play();
         }

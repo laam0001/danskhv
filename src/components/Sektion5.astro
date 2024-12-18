@@ -32,38 +32,41 @@
 
 </div>
 
-  <script>
-    import { scroll } from "motion"; 
-    
+<script>
+import { scroll } from "motion"; 
+  
     /* Scroll scrubber - Mobil */
-    const scrubbervideomobil = document.querySelector("#videofil-mobil2");
-    scrubbervideomobil.pause(); 
+const scrubbervideoMobile = document.querySelector("#videofil-mobil2");
+if (scrubbervideoMobile) {
+    scrubbervideoMobile.pause();
     scroll(
         ({ y }) => {
-        if (!scrubbervideomobil.readyState) return;
-        scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
+            if (!scrubbervideoMobile.readyState) return;
+            scrubbervideoMobile.currentTime = scrubbervideoMobile.duration * y.progress;
         },
         {
-        target: document.querySelector(".videoscroller2"),
-        offset: ["start end", "end start"]
+            target: document.querySelector(".videoscroller2"),
+            offset: ["start end", "end end"],
         }
     );
+}
 
-
-    /* Scroll scrubber - Desktop */
-    const scrubbervideodesktop = document.querySelector("#videofil-desktop2");
-    scrubbervideodesktop.pause();   
+/* Scroll scrubber - Desktop */
+const scrubbervideoDesktop = document.querySelector("#videofil-desktop2");
+if (scrubbervideoDesktop) {
+    scrubbervideoDesktop.pause();
     scroll(
         ({ y }) => {
-        if (!scrubbervideodesktop.readyState) return;
-        scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
+            if (!scrubbervideoDesktop.readyState) return;
+            scrubbervideoDesktop.currentTime = scrubbervideoDesktop.duration * y.progress;
         },
         {
-        target: document.querySelector(".videoscrollerdesktop2"),
-        offset: ["start end", "end start"]
+            target: document.querySelector(".videoscrollerdesktop2"),
+            offset: ["start end", "end end"],
         }
     );
- </script>
+}
+</script>
 
 
   

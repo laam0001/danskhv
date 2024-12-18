@@ -14,6 +14,7 @@ import Sektion6 from "../components/Sektion6.astro";
 import Sektion7 from "../components/Sektion7.astro";
 import Sektion8 from "../components/Sektion8.astro";
 import Sektion9 from "../components/Sektion9.astro";
+import phone from "/public/phones.svg";
 
 function changeImage(){
   document.getElementById("audio-global-mute").style.visibility = 'hidden';
@@ -22,6 +23,18 @@ function changeImage(){
 ---
 
 <MainLayout title="DHV – Historisk Fællesskab | Kampagne">
+
+<!-- Lyd på for en bedre oplevelse -->
+<section class="h-screen bg-green-100">
+        <div id="audio-global" class="cursor-pointer flex justify-center items-center">
+            <Image src={phone} alt="Lyd" loading="lazy" class="w-full mt-48 mx-4 cursor-pointer" id="audio-global-button" >
+        </div>  
+    
+        <p class="text-center text-green-400 font-sans font-bold text-xl mx-5 mt-10">For den bedste visnings- og lydoplevelse <br>  sæt dine høretelefoner i.</p>
+        <p class="text-center text-green-400 font-sans  text-xl mx-5 pt-4"> Klar? <br> Klik på høretelefonerne for at starte!</p>
+    </div>
+</section>  
+
 
 <!-- 1. Hero sektion -->
 <section id="section1" class="section1">
@@ -106,6 +119,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 import { animate, inView, scroll } from "motion";
 
+
+ // Klik på høretelefonerne for at starte
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("audio-global").addEventListener("click", function() {
+        const isSmallScreen = window.innerWidth <= 768; // Example: 768px or less for small screens
+
+        // Scroll to section 1
+        window.scrollBy({
+            top: isSmallScreen ? window.innerHeight : window.innerHeight * 2,
+            behavior: "smooth"
+        });
+
+        // Make the sound button sticky after click
+        document.getElementById("audio-global-button").classList.add("sticky");
+    });
+});
+
+// Lydknap funktionalitet
 const baggrundslydknap = document.getElementById("audio-global-button");
 var baggrundslyd = new Audio('https://lna-mediedesign.dk/sound-dronning.mp3');
 var afspillerlyd = false;
@@ -124,16 +155,17 @@ function toggleafspil() {
 // Update the button icon when the sound starts playing
 baggrundslyd.onplaying = function() {
     afspillerlyd = true;
-    // Update the icon to 'sound off'
-    baggrundslydknap.src = '/sound-on.webp';
+    // Update the icon to 'sound on'
+    baggrundslydknap.src = '/public/phones.svg';
 };
 
 // Update the button icon when the sound is paused
 baggrundslyd.onpause = function() {
     afspillerlyd = false;
-    // Update the icon to 'sound on'
+    // Update the icon to 'sound off'
     baggrundslydknap.src = '/sound-off.webp';
 };
+
 
     scroll( animate(".progress-bar", { scaleX: [0, 1] }));
 
@@ -274,6 +306,28 @@ baggrundslyd.onpause = function() {
     scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
 		target: document.querySelector(".stickyparallax1"),
 	});
+
+    // Når DOM'en er klar
+document.addEventListener("DOMContentLoaded", function() {
+  // Horisontal scroll animation for mobil version
+  scroll(
+    animate("#horisontalliste", {
+      transform: ["none", "translateX(-800vw)"], // Rull horisontalt, over 800vw
+      ease: "none", // Glat bevægelse
+    }),
+    { target: document.querySelector("#horisontalscrollsection") } // Trigger ved sektionen
+  );
+
+  // Horisontal scroll animation for desktop version
+  scroll(
+    animate("#horisontallistedesktop", {
+      transform: ["none", "translateX(-600vw)"], // Rull horisontalt, over 600vw
+      ease: "none", // Glat bevægelse
+    }),
+    { target: document.querySelector("#horisontalscrollsectiondesktop") } // Trigger ved desktop-sektionen
+  );
+});
+   
 
 </script>
 

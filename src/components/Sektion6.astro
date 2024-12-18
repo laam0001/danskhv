@@ -1,76 +1,71 @@
----
----
-
 <!-- Ny kode -- Hest der løber  -->
 <!-- Mobil video -->
 <div class="bg-[#c9e8f1]">
-    <!-- Mobil video -->
-    <div class="lg:hidden videocontainer sticky top-[10%] w-full h-full">
-        <video muted loop autoplay class="w-full" id="videofil-mobil2">
-            <source src="https://lna-mediedesign.dk/hesst-l%C3%B8ber-mobile.mp4" type="video/mp4">
-            <source src="https://lna-mediedesign.dk/hesst-l%C3%B8ber-mobile.webm" type="video/webm">
-        </video>
-    </div>
-    <div class="h-screen videoscroller"></div>
-
-    <!-- Desktop video -->
-    <div class="hidden lg:block videocontainer sticky top-[0%] w-full">
-        <video muted autoplay id="videofil-desktop2" class="w-full" preload="auto">
-            <source src="https://lna-mediedesign.dk/horse-running-desktop.mp4" type="video/mp4">
-            <source src="https://lna-mediedesign.dk/horse-running-desktop.webm" type="video/webm">
-        </video>
-    </div>
-    <div class="h-screen videoscroller"></div>
-
-
- <div class="relative flex justify-end">  <!-- relative elementet -->
-        <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 lg:mx-32 lg:w-[500px]">
-            <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
-                <p class="text-center">Det er her, adrenalinen rammer.</p>
-            </div>
-
-            <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
-                <p class="text-center">Det er her, hjertet banker stærkere.</p>
-            </div>
-
-            <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
-                <p class="text-center">Når løbet går i gang, er der ikke noget, der kan måle sig med denne spænding.</p>
-            </div>
-        </div>
-    </div>
-    <div class="h-[80vh]"></div>
+  <!-- Mobil video -->
+  <div class="lg:hidden videocontainer sticky top-[10%] w-full h-full">
+      <video muted loop autoplay class="w-full" id="videofil-mobil2" preload="auto">
+          <source src="https://lna-mediedesign.dk/hesst-l%C3%B8ber-mobile.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/hesst-l%C3%B8ber-mobile.webm" type="video/webm">
+      </video>
   </div>
+  <div class="h-screen videoscroller"></div>
+
+  <!-- Desktop video -->
+  <div class="hidden lg:block videocontainer sticky top-[0%] w-full">
+      <video muted autoplay id="videofil-desktop2" class="w-full" preload="auto">
+          <source src="https://lna-mediedesign.dk/horse-running-desktop.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/horse-running-desktop.webm" type="video/webm">
+      </video>
+  </div>
+  <div class="h-screen videoscroller"></div>
+
+  <!-- Tekstindhold -->
+  <div class="relative flex justify-end">
+      <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 lg:mx-32 lg:w-[500px]">
+          <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
+              <p class="text-center">Det er her, adrenalinen rammer.</p>
+          </div>
+
+          <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
+              <p class="text-center">Det er her, hjertet banker stærkere.</p>
+          </div>
+
+          <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96 mt-40">
+              <p class="text-center">Når løbet går i gang, er der ikke noget, der kan måle sig med denne spænding.</p>
+          </div>
+      </div>
+  </div>
+  <div class="h-[80vh]"></div>
+</div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // Find video elementet
-  const video = document.getElementById("videofil-desktop2");
+// Find video elementet
+const video = document.getElementById("videofil-desktop2");
 
-  // Funktion til at starte videoen, når den er i synsfeltet
-  const startVideo = (entries, observer) => {
-    entries.forEach(entry => {
-      // Hvis videoen er i synsfeltet
-      if (entry.isIntersecting) {
-        video.play();  // Start videoen
-        video.onended = () => {
-          observer.unobserve(entry.target);  // Stop observeren, når videoen er færdig
-        };
-      } else {
-        video.pause();  // Stop videoen, hvis den er udenfor synsfeltet
-        video.currentTime = 0;  // Sæt videoen tilbage til starten
-      }
-    });
-  };
-
-  // Opret en intersection observer
-  const observer = new IntersectionObserver(startVideo, {
-    root: null,  // Brug viewport som reference
-    threshold: 0.5  // Videoen skal være 50% synlig før den starter
+// Funktion til at starte videoen, når den er i synsfeltet
+const startVideo = (entries, observer) => {
+  entries.forEach(entry => {
+    // Hvis videoen er i synsfeltet
+    if (entry.isIntersecting) {
+      video.play();  // Start videoen
+      video.onended = () => {
+        observer.unobserve(entry.target);  // Stop observeren, når videoen er færdig
+      };
+    } else {
+      video.pause();  // Stop videoen, hvis den er udenfor synsfeltet
+      video.currentTime = 0;  // Sæt videoen tilbage til starten
+    }
   });
+};
 
-  // Start observering af videoen
-  observer.observe(video);
+// Opret en intersection observer
+const observer = new IntersectionObserver(startVideo, {
+  root: null,  // Brug viewport som reference
+  threshold: 0.5  // Videoen skal være 50% synlig før den starter
+});
+
+// Start observering af videoen
+observer.observe(video);
 });
 </script>
-
-

@@ -30,3 +30,17 @@ import krig from "../assets/images/krig.webp";
         </div>
     </div>
  </section>
+
+ <script>
+    import { animate, scroll } from "motion";
+
+    /* Crossfade to billeder */
+    scroll(
+    animate(".crossfadebottomimg", {
+        opacity: [1, 0]
+    }), {
+        target: document.querySelector(".crossfadeimages"),
+        offset: ["25vh", "-2vh"]
+    }
+    );
+ </script>

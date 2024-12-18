@@ -199,16 +199,6 @@ baggrundslyd.onpause = function() {
          }
      });
 
-
-    inView( ".walkinview", () =>{
-    animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 }) 
-    
-
-    return () => {
-        animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 })
-    }
-    })
-
     inView( ".lookinview", () =>{
     animate( ".look1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 }) 
     
@@ -254,16 +244,6 @@ baggrundslyd.onpause = function() {
       offset: ["0.90 end", "end end"]
     }
     )
-
-    /* Crossfade to billeder */
-    scroll(
-    animate(".crossfadebottomimg", {
-        opacity: [1, 0]
-    }), {
-        target: document.querySelector(".crossfadeimages"),
-        offset: ["25vh", "-2vh"]
-    }
-    );
 
      /* Crossfade to billeder */
      scroll(

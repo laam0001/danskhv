@@ -312,29 +312,7 @@ baggrundslyd.onpause = function() {
 
     scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
 		target: document.querySelector(".stickyparallax1"),
-	});
-
-    // Når DOM'en er klar
-document.addEventListener("DOMContentLoaded", function() {
-  // Horisontal scroll animation for mobil version
-  scroll(
-    animate("#horisontalliste", {
-      transform: ["none", "translateX(-800vw)"], // Rull horisontalt, over 800vw
-      ease: "none", // Glat bevægelse
-    }),
-    { target: document.querySelector("#horisontalscrollsection") } // Trigger ved sektionen
-  );
-
-  // Horisontal scroll animation for desktop version
-  scroll(
-    animate("#horisontallistedesktop", {
-      transform: ["none", "translateX(-600vw)"], // Rull horisontalt, over 600vw
-      ease: "none", // Glat bevægelse
-    }),
-    { target: document.querySelector("#horisontalscrollsectiondesktop") } // Trigger ved desktop-sektionen
-  );
-});
-   
+	});   
 
 </script>
 

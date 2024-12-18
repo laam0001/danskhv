@@ -86,38 +86,4 @@ import hat from "/public/hat.svg";
 </section>
 
 
-
-<script>
-  import { scroll } from "motion"; 
-  
-  /* Scroll scrubber - Mobil */
-const scrubbervideomobil = document.querySelector("#videofil-mobil3");
-scrubbervideomobil.pause();	
-scroll(
-  ({ y }) => {
-  if (!scrubbervideomobil.readyState) return;
-  scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
-  },
-  {
-  target: document.querySelector(".videoscroller3"),
-  offset: ["start end", "end start"]
-  }
-);
-
-
-  /* Scroll scrubber - Desktop */
-const scrubbervideodesktop = document.querySelector("#videofil-desktop3");
-scrubbervideodesktop.pause();	
-scroll(
-  ({ y }) => {
-  if (!scrubbervideodesktop.readyState) return;
-  scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
-  },
-  {
-  target: document.querySelector(".videoscrollerdesktop3"),
-  offset: ["start end", "end start"]
-  }
-);
-
-</script>
  

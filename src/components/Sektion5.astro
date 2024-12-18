@@ -74,37 +74,3 @@
 
   </section>
   
-
-
-<script>
-    import { scroll } from "motion"; 
-    
-    /* Scroll scrubber - Mobil */
-	const scrubbervideomobil = document.querySelector("#videofil-mobil2");
-	scrubbervideomobil.pause();	
-	scroll(
-		({ y }) => {
-		if (!scrubbervideomobil.readyState) return;
-		scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
-		},
-		{
-		target: document.querySelector(".videoscroller2"),
-		offset: ["start end", "end start"]
-		}
-	);
-
-
-    /* Scroll scrubber - Desktop */
-	const scrubbervideodesktop = document.querySelector("#videofil-desktop2");
-	scrubbervideodesktop.pause();	
-	scroll(
-		({ y }) => {
-		if (!scrubbervideodesktop.readyState) return;
-		scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
-		},
-		{
-		target: document.querySelector(".videoscrollerdesktop2"),
-		offset: ["start end", "end start"]
-		}
-	);
- </script>

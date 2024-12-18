@@ -35,3 +35,15 @@ import { Image } from "astro:assets";
     </div>
     
 
+    <script>
+        import { animate, inView } from "motion";
+         inView( ".walkinview", () =>{
+    animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 }) 
+    
+
+    return () => {
+        animate( ".walk1", { x: [0, 0 ], y: [0, 50 ] }, { duration: 1 })
+    }
+    })
+    </script>
+

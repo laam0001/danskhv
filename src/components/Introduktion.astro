@@ -4,27 +4,30 @@ import { Image } from "astro:assets";
 import headset from "../assets/images/phones.svg";
 
 ---
+<div id="audio-global" class="flex justify-end pt-[70px]">
+  <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" id="audio-global-button">
+</div>
 
 <section class="relative h-screen overflow-hidden">
-  <div class="absolute inset-0 bg-green-50 bg-[url('/intro-baggrund.webp')] bg-cover bg-center scale-110 transition-transform duration-1000 ease-in-out animate-zoomIn">
-    <a href="#section1">
-      <div class="flex justify-center items-center lg:-mt-10">
-        <Image class="mt-48 mx-4 transition duration-1000 ease-in-out hover:scale-105" src={headset} alt="Påfør høretelefoner" />
+  <div class="absolute inset-0 bg-green-50 bg-[url('/intro-baggrund.webp')] bg-cover bg-center animate-zoomIn">
+      <a href="#section1">
+          <div id="audio-global" class="cursor-pointer flex justify-center items-center">
+              <Image src={headset} alt="Lyd" loading="lazy" class="w-full mt-40 lg:w-[500px] lg:mt-52 mx-4 cursor-pointer" id="audio-global-button2">
+          </div>  
+      </a> 
+
+      <p class="text-center text-green-400 text-2xl font-display font-bold mx-5 mt-10">
+          For den bedste visnings- og lydoplevelse <br> sæt dine høretelefoner i.
+      </p>
+      <p class="text-center text-green-400 font-sans text-xl mx-5 pt-8">
+          Er du klar? <br> Klik på høretelfonerne for at starte!
+      </p>
+  
+      <div class="relative inset-0 flex items-center justify-center z-30 py-10">
+          <a href="#section1" class="font-sans mx-8 py-5 px-14 bg-green-400 hover:bg-red-400 text-white-100 hover:text-white-100 text-center barlow-condensed-bold uppercase text-xl lg:text-4xl justify-center rounded-md drop-shadow-md transition duration-400 ease-in-out">
+              Fortsæt uden lyd
+          </a>
       </div>
-    </a>
-
-    <p class="text-center text-green-400 text-2xl font-display font-bold mx-5 mt-10">
-      For den bedste visnings- og lydoplevelse <br> sæt dine høretelefoner i.
-    </p>
-    <p class="text-center text-green-400 font-sans text-xl mx-5 pt-8">
-      Er du klar? <br> Klik på knappen for at starte!
-    </p>
-
-    <div class="relative inset-0 flex items-center justify-center z-30 py-10">
-      <a href="#section1" class="font-sans mx-8 py-5 px-14 bg-green-400 hover:bg-red-400 text-white-100 hover:text-white-100 text-center barlow-condensed-bold uppercase text-4xl lg:text-4xl justify-center rounded-md drop-shadow-md transition duration-400 ease-in-out">
-        Klar!
-      </a>
-    </div>
   </div>
 
   <div class="absolute bottom-0 w-full border-b-2 border-green-400"></div>

@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import heroDesktop from "../assets/images/hero-desktop.webp";
 import heroImg from "../assets/images/bg-hero.webp";
 import Button from '../components/Button.astro';
+import headset from "../assets/images/phones.svg";
 
 import Introduktion from "../components/Introduktion.astro";
 import Sektion1 from "../components/Sektion1.astro";
@@ -24,16 +25,12 @@ function changeImage(){
 
 <MainLayout title="DHV – Historisk Fællesskab | Kampagne">
 
-    <div id="audio-global" class="flex justify-end pt-[70px]">
-        <img src="/sound-off.webp" alt="Lyd" loading="lazy" class="z-10 fixed cursor-pointer w-20 mt-10 mr-4" id="audio-global-button">
-      </div>
-
-<section id="introduktion" class="introduktion">
-    <Introduktion></Introduktion>
-</section>
+   <Introduktion></Introduktion>
+    
 
 <!-- 1. Hero sektion -->
 <section id="section1" class="section1">
+
     <Sektion1></Sektion1>
 </section>
 
@@ -116,10 +113,18 @@ document.addEventListener("DOMContentLoaded", function() {
 import { animate, inView, scroll } from "motion";
 
 const baggrundslydknap = document.getElementById("audio-global-button");
-var baggrundslyd = new Audio('https://idahallback-multimedieeksamen.netlify.app/introduktion-musik.m4a');
+const headsetButton = document.getElementById("audio-global-button2");
+var baggrundslyd = new Audio('https://lna-mediedesign.dk/section1.mp3');
 var afspillerlyd = false;
 
-// Toggle play/pause when the button is clicked
+// Event listener to start playing the sound when the headset button is clicked
+headsetButton.addEventListener("click", function() {
+    if (!afspillerlyd) {
+        baggrundslyd.play();
+    }
+});
+
+// Toggle play/pause when the sound-off button is clicked
 baggrundslydknap.addEventListener("click", toggleafspil);
 
 function toggleafspil() {
@@ -133,16 +138,18 @@ function toggleafspil() {
 // Update the button icon when the sound starts playing
 baggrundslyd.onplaying = function() {
     afspillerlyd = true;
-    // Update the icon to 'sound off'
+    // Update the icon to 'sound on'
     baggrundslydknap.src = '/sound-on.webp';
 };
 
 // Update the button icon when the sound is paused
 baggrundslyd.onpause = function() {
     afspillerlyd = false;
-    // Update the icon to 'sound on'
+    // Update the icon to 'sound off'
     baggrundslydknap.src = '/sound-off.webp';
 };
+
+
 
     scroll( animate(".progress-bar", { scaleX: [0, 1] }));
 

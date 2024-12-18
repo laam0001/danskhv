@@ -97,6 +97,26 @@ import hat from "/public/hat.svg";
     </div>
 </div>
 
+<script>
+    import { animate, scroll } from "motion";
+
+    /* Horisontal scroll sektion */
+   scroll(
+   animate("#horisontalliste", {
+       transform: ["none", "translateX(-800vw)"]
+   }),
+   { target: document.querySelector("#horisontalscrollsection") }
+   ); 
+
+    /* Horisontal scroll sektion */
+   scroll(
+   animate("#horisontallistedesktop", {
+       transform: ["none", "translateX(-600vw)"]
+   }),
+   { target: document.querySelector("#horisontalscrollsectiondesktop") }
+   ); 
+</script>
+
 
 
 

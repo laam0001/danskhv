@@ -1,52 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import bgHestNedefra from "../assets/images/Baggrund-hest-nedefra.webp";
-import bgHestNedefraMobil from "../assets/images/hest-nedefra-mobil.webp";
-import hestNedefra from "../assets/images/hest-nedefra.svg";
-import hat from "/public/hat.svg"
+
 ---
-
-<!--
-<section class="overflow-clip relative bg-brown-100">
-    <div class="sticky">
-     Mobil version, der bliver sticky
-        <Image 
-            src={bgHestNedefraMobil} 
-            alt="træer set nedefra" 
-            class="lg:hidden sticky top-48 left-0 right-0 bottom-0 h-full bg-cover bg-center lg:w-full lg:h-full lg:mt-20 lg:top-0 jumpinview hatinview"
-        />
-
-    Desktop version, der bliver sticky
-        <Image 
-            src={bgHestNedefra} 
-            alt="træer set nedefra" 
-            class="hidden lg:block sticky top-48 left-0 right-0 bottom-0 h-full bg-cover bg-center lg:w-full lg:h-full lg:mt-20 lg:top-0 jumpinview hatinview"
-        />
-    </div>
-    
-   Hest-billeder, der bevæger sig (absolut position) 
-    <Image 
-        src={hestNedefra} 
-        alt="hest kommer løbende set nedefra" 
-        class="absolute top-48 left-1/2 transform -translate-x-1/2 w-36 lg:w-64 lg:mx-48 h-auto z-10 jump1 animate-[jump_10s_ease-in-out_infinite]"
-    />
-
-    <Image 
-        src={hestNedefra} 
-        alt="hest kommer løbende set nedefra" 
-        class="absolute top-48 left-1/4 transform -translate-x-1/2 w-36 lg:w-64 lg:mx-48 h-auto z-10 jump2 animate-[jump_10s_ease-in-out_infinite]"
-    />
-
-     Hat-billede, der bevæger sig 
-    <Image 
-        src={hat} 
-        alt="hat" 
-        class="absolute top-48 left-1/4 transform -translate-x-1/2 w-36 lg:w-64 lg:mx-48 h-auto z-10 hat animate-[hat_5s_ease-in-out_infinite]"
-    />
-</section>
-
--->
-
 
 <!-- Ny kode -->
 
@@ -71,5 +25,39 @@ import hat from "/public/hat.svg"
     <div class="h-screen videoscrollerdesktop4"></div>
   
   </section>
+
+  <script>
+    import { scroll } from "motion"; 
+    
+    /* Scroll scrubber - Mobil */
+  const scrubbervideomobil = document.querySelector("#videofil-mobil4");
+  scrubbervideomobil.pause(); 
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideomobil.readyState) return;
+    scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscroller4"),
+    offset: ["start end", "end start"]
+    }
+  );
+  
+  
+    /* Scroll scrubber - Desktop */
+  const scrubbervideodesktop = document.querySelector("#videofil-desktop4");
+  scrubbervideodesktop.pause(); 
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideodesktop.readyState) return;
+    scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscrollerdesktop4"),
+    offset: ["start end", "end start"]
+    }
+  );
+  
+  </script>
   
   

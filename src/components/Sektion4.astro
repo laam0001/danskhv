@@ -99,4 +99,14 @@ import glas from "../assets/images/glas.webp";
         offset: ["start end", "end end"]
         }
     );
+
+    /* Crossfade to billeder */
+    scroll(
+    animate(".fadebottomimg", {
+        opacity: [1, 0]
+    }), {
+        target: document.querySelector(".fadeimages"),
+        offset: ["25vh", "-2vh"]
+    }
+    );
 </script>

@@ -108,7 +108,49 @@ function changeImage(){
 
 <!-- 8. Kvinde kaster hat med jubel -->
 <section id="section8" class="section8">
-     <Sektion8></Sektion8>
+    <div class="bg-red-100 pt-10 lg:-mt-[800px]">
+
+        <!-- Mobil video -->
+        <div class="lg:hidden videocontainer sticky top-[10%] w-full h-screen">
+          <video muted loop playsinline class="w-full" id="videofil-mobil3">
+              <source src="https://lna-mediedesign.dk/hat-mobile.mp4" type="video/mp4">
+              <source src="https://lna-mediedesign.dk/hat-mobile.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="h-screen videoscroller3"></div>
+      
+        <!-- Desktop video -->
+        <div class="hidden lg:block videocontainer sticky top-[0%] w-full">
+          <video muted loop class="w-full" id="videofil-desktop3">
+              <source src="https://lna-mediedesign.dk/hat-desktop.mp4" type="video/mp4">
+              <source src="https://lna-mediedesign.dk/hat-desktop.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="h-screen videoscrollerdesktop3"></div>
+      
+        <div class="relative flex justify-end"><!-- relative elementet -->
+            <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 lg:mx-32 lg:w-[500px]">
+                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96" >
+                    <p class="text-center">Og så er der hende.</p>
+                </div>
+      
+                <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
+                  <p class="text-center">Hun kaster sin hat op i luften. </p>
+              </div>
+      
+              <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
+                <p class="text-center">Smilene, latteren, glæden. </p>
+            </div>
+      
+            <div class="bg-black-100/80 text-white-100 text-[18px] p-10 mb-96">
+              <p class="text-center">Det er ikke bare et løb. <br> Det er en fest. <br> En hyldest til traditionen.</p>
+          </div>
+      
+            </div>
+        </div>
+        <div class="h-[80vh]"></div>
+      
+      </div>
 
 
 <!-- Gradient overgang -->
@@ -408,6 +450,35 @@ scrubbervideoDesktop.pause();
 		offset: ["start end", "end start"]
 		}
 	);
+
+/* Scroll scrubber - Mobil */
+const scrubbervideomobil = document.querySelector("#videofil-mobil3");
+  scrubbervideomobil.pause(); 
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideomobil.readyState) return;
+    scrubbervideomobil.currentTime = scrubbervideomobil.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscroller3"),
+    offset: ["start end", "end start"]
+    }
+  );
+
+
+  /* Scroll scrubber - Desktop */
+  const scrubbervideodesktop = document.querySelector("#videofil-desktop3");
+  scrubbervideodesktop.pause(); 
+  scroll(
+    ({ y }) => {
+    if (!scrubbervideodesktop.readyState) return;
+    scrubbervideodesktop.currentTime = scrubbervideodesktop.duration * y.progress;
+    },
+    {
+    target: document.querySelector(".videoscrollerdesktop3"),
+    offset: ["start end", "end start"]
+    }
+  );
 
     /* Horisontal scroll sektion */
     scroll(

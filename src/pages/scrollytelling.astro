@@ -158,7 +158,27 @@ function changeImage(){
 
 <!-- 7. Hest nedefra -->
 
-    <Sektion7></Sektion7>
+<div class="bg-brown-100 pt-10 lg:-mt-[800px]">
+
+    <!-- Mobil video -->
+    <div class="lg:hidden videocontainer sticky top-[10%] w-full h-screen">
+      <video muted loop playsinline class="w-full" id="videofil-mobil4">
+          <source src="https://lna-mediedesign.dk/hest-nede-mobil.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/hest-nede-mobile.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="h-screen videoscroller4"></div>
+  
+    <!-- Desktop video -->
+    <div class="hidden lg:block videocontainer sticky top-[0%] w-full">
+      <video muted autoplay loop class="w-full" id="videofil-desktop4">
+          <source src="https://lna-mediedesign.dk/hest-nede.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/hest-nede-mobil.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="h-screen videoscrollerdesktop4"></div>
+  
+</div>
 </section>
 
  <!--  Gradient overgang -->
@@ -423,7 +443,7 @@ baggrundslyd.onpause = function() {
     }
     )
 
-      /* Scroll scrubber - Mobil */
+      /* Scroll scrubber - Mobil sektion5*/
 const scrubbervideoMobile = document.querySelector("#videofil-mobil2");
 scrubbervideoMobile.pause();	
 	scroll(
@@ -437,7 +457,7 @@ scrubbervideoMobile.pause();
 		}
 	);
 
-/* Scroll scrubber - Desktop */
+/* Scroll scrubber - Desktop sektion5*/
 const scrubbervideoDesktop = document.querySelector("#videofil-desktop2");
 scrubbervideoDesktop.pause();	
 	scroll(
@@ -451,7 +471,7 @@ scrubbervideoDesktop.pause();
 		}
 	);
 
-/* Scroll scrubber - Mobil */
+/* Scroll scrubber - Mobil sektion8 */
 const scrubbervideomobil = document.querySelector("#videofil-mobil3");
   scrubbervideomobil.pause(); 
   scroll(
@@ -466,7 +486,7 @@ const scrubbervideomobil = document.querySelector("#videofil-mobil3");
   );
 
 
-  /* Scroll scrubber - Desktop */
+  /* Scroll scrubber - Desktop sektion8*/
   const scrubbervideodesktop = document.querySelector("#videofil-desktop3");
   scrubbervideodesktop.pause(); 
   scroll(
@@ -479,6 +499,38 @@ const scrubbervideomobil = document.querySelector("#videofil-mobil3");
     offset: ["start end", "end start"]
     }
   );
+
+  /* Scroll scrubber - Mobil */
+const scrubbervideoMobile2 = document.querySelector("#videofil-mobil4");
+if (scrubbervideoMobile2) {
+    scrubbervideoMobile2.pause();
+    scroll(
+        ({ y }) => {
+            if (!scrubbervideoMobile2.readyState) return;
+            scrubbervideoMobile2.currentTime = scrubbervideoMobile2.duration * y.progress;
+        },
+        {
+            target: document.querySelector(".videoscroller4"),
+            offset: ["start end", "end end"],
+        }
+    );
+}
+
+/* Scroll scrubber - Desktop */
+const scrubbervideoDesktop2 = document.querySelector("#videofil-desktop4");
+if (scrubbervideoDesktop2) {
+    scrubbervideoDesktop2.pause();
+    scroll(
+        ({ y }) => {
+            if (!scrubbervideoDesktop2.readyState) return;
+            scrubbervideoDesktop2.currentTime = scrubbervideoDesktop2.duration * y.progress;
+        },
+        {
+            target: document.querySelector(".videoscrollerdesktop4"),
+            offset: ["start end", "end end"],
+        }
+    );
+}
 
     /* Horisontal scroll sektion */
     scroll(

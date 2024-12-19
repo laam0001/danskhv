@@ -15,7 +15,7 @@ import heroDesktop from "../assets/images/hero-desktop.webp";
   
 <!-- Pil ned -->
         <div id="arrow-down"class="cursor-pointer floating-arrow absolute bottom-[22%] left-1/2 transform -translate-x-1/2 z-20 animate-[walking_5s_ease-in-out_infinite]">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-[#004228]" viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-red-400" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M10 18a1 1 0 01-.707-.293l-7-7a1 1 0 011.414-1.414L10 15.586l6.293-6.293a1 1 0 011.414 1.414l-7 7A1 1 0 0110 18z" clip-rule="evenodd" />
             </svg>
         </div>
@@ -33,14 +33,14 @@ import heroDesktop from "../assets/images/hero-desktop.webp";
      <Image class="w-full h-auto" src={heroDesktop} alt="publikum med hatte på"/>
                 
     <!-- Desktop animationen -->
-    <div class="absolute top-2/4 lg:left-[650px] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+    <div class="absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 lg:top-[60%] lg:left-[50%]">
         <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
         <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 50vw; height: auto;" id="hest" loop autoplay></dotlottie-player>
         </div>
     </div>
 
     <!-- Mobile animation -->
-    <div class="lg:hidden absolute top-72 right-8">
+    <div class="lg:hidden absolute z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <script is:inline src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
         <dotlottie-player src="https://lottie.host/de828805-50bd-4083-bbbb-04984803e2f8/BX8pAFajRI.json" background="transparent" speed="2.5" style="width: 100vw; height: auto;" id="hest" loop autoplay></dotlottie-player>
     </div>

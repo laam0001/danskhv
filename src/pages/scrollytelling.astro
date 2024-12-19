@@ -64,7 +64,38 @@ function changeImage(){
 
 <!--  5. Røgsky - Spændingsmusik -->
 <section id="section5" class="section5">
-     <Sektion5></Sektion5>
+     <!-- Ny Kode -- Røgsky -->
+<div class="bg-brown-100 pt-10 lg:-mt-[800px]">
+
+    <!-- Mobil video -->
+    <div class="lg:hidden videocontainer sticky top-[0%] w-full h-screen">
+      <video muted loop playsinline class="w-full" id="videofil-mobil2">
+          <source src="https://lna-mediedesign.dk/horse-in-mobile.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/horse-in-mobile.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="h-screen videoscroller2"></div>
+  
+    <!-- Desktop video -->
+    <div class="hidden lg:block videocontainer sticky top-[0%] w-full">
+      <video muted loop playsinline class="w-full" id="videofil-desktop2">
+          <source src="https://lna-mediedesign.dk/horse-in-desktop.mp4" type="video/mp4">
+          <source src="https://lna-mediedesign.dk/horse-in-desktop.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="h-screen videoscrollerdesktop2"></div>
+
+    <div class="relative flex justify-end"><!-- relative elementet -->
+        <div class="flex flex-col w-full md:w-1/2 h-full justify-center gap-4 p-4 lg:mx-32 lg:w-[500px]">
+            <div class="bg-black-100/70 text-white-100 text-[18px] p-10 mb-96">
+                <p class="text-center">Mærk suset...</p>
+            </div>
+        </div>
+    </div>
+    <div class="h-[80vh]"></div>
+    <div class="h-96 bg-[#b2deec]"></div>
+
+</div>
 
 
 <!-- 6. Gallop afslutning -->
@@ -349,6 +380,34 @@ baggrundslyd.onpause = function() {
       offset: ["0.90 end", "end end"]
     }
     )
+
+      /* Scroll scrubber - Mobil */
+const scrubbervideoMobile = document.querySelector("#videofil-mobil2");
+scrubbervideoMobile.pause();	
+	scroll(
+		({ y }) => {
+		if (!scrubbervideoMobile.readyState) return;
+		scrubbervideoMobile.currentTime = scrubbervideoMobile.duration * y.progress;
+		},
+		{
+		target: document.querySelector(".videoscroller2"),
+		offset: ["start end", "end start"]
+		}
+	);
+
+/* Scroll scrubber - Desktop */
+const scrubbervideoDesktop = document.querySelector("#videofil-desktop2");
+scrubbervideoDesktop.pause();	
+	scroll(
+		({ y }) => {
+		if (!scrubbervideoDesktop.readyState) return;
+		scrubbervideoDesktop.currentTime = scrubbervideoDesktop.duration * y.progress;
+		},
+		{
+		target: document.querySelector(".videoscrollerdesktop2"),
+		offset: ["start end", "end start"]
+		}
+	);
 
     /* Horisontal scroll sektion */
     scroll(

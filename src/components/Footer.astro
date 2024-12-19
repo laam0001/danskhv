@@ -131,37 +131,35 @@ import Button from "../components/Button.astro";
   </div>
 
 
-  <div class="flex items-center justify-center py-4 ">
+  <div class="flex items-center justify-center py-4">
     <h3 class="md:text-xl text-lg font-sans text-text-header">
       Tilmeld dig vores nyhedsbrev
     </h3>
   </div>
   
-
-  <div class="w-[380px] mx-auto flex">
-    <label for="email" class="block"></label>
-    <input
-      type="text"
-      id="email"
-      name="email"
-      placeholder=""
-      class="bg-transparent border-red-400 focus:border-green-400 font-sans placeholder-[#004228] w-full text-md rounded-md focus:ring-0 border-1 focus:outline-none focus:border-2 focus:text-[#004228]"
-    />
-
-    <button>
-        <Button>
-          <div
-            id="arrow-right-logo"
-            class="w-[50px] h-[50px] ml-2 bg-[url('icons/arrow-right.svg')] hover:bg-[url('icons/arrow-right-hovered.svg')] bg-cover transition duration-400 ease-in-out hover:translate-x-2">
-          </div>
-        </Button>
-      </button>      
-
-  <div
-    class="flex py-10 text-text-header"
-    style="justify-content: space-between;"
-  >
-    <div class="text-xs ml-12">CVR: 31 94 33 29</div>
-    <div class="text-xs mr-12">Copyright 2024 <span class="font-bold">©</span> Dansk Hestevæddeløb</div>
+  <div class="w-auto mx-10 lg:mx-80 flex flex-col items-center">
+    <!-- Input og pil på samme linje -->
+    <div class="flex w-full items-center">
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Indtast din email"
+        class="bg-transparent border-red-400 focus:border-green-400 font-sans placeholder-[#004228] w-full text-md rounded-md focus:ring-0 border-1 focus:outline-none focus:border-2 focus:text-[#004228] mr-2"
+      />
+      <button>
+        <div
+          id="arrow-right-logo"
+          class="w-[50px] h-[50px] bg-[url('icons/arrow-right.svg')] hover:bg-[url('icons/arrow-right-hovered.svg')] bg-cover transition duration-400 ease-in-out hover:translate-x-2">
+        </div>
+      </button>
+    </div>
+  
+    <!-- CVR og Copyright info -->
+    <div class="flex flex-col items-center mt-6 mb-10 text-xs text-text-header">
+      <div class="mb-2">CVR: 31 94 33 29</div>
+      <div>Copyright 2024 <span class="font-bold">©</span> Dansk Hestevæddeløb</div>
+    </div>
   </div>
-</div>
+  
+  
